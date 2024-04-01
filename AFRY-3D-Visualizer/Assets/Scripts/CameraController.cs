@@ -6,6 +6,8 @@ public class CameraController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Cinemachine.CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private float maxZoom = 50f;
+    [SerializeField] private float minZoom = 5f;
     Vector3 followOffset;
     public float lookSpeed = 2.0f;
     public float zoomSpeed = 10.0f;
@@ -47,6 +49,14 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             followOffset -= zoomDir;
+        }
+        if(followOffset.magnitude > maxZoom)
+        {
+            followOffset = zoomDir * maxZoom;
+        }
+        if (followOffset.magnitude < minZoom)
+        {
+            followOffset = zoomDir * minZoom;
         }
 
         virtualCamera.GetCinemachineComponent<Cinemachine.CinemachineTransposer>().m_FollowOffset = Vector3.Lerp(
