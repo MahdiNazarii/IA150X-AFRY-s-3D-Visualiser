@@ -22,6 +22,11 @@ public class CameraController : MonoBehaviour
         RotateCamera();
         //HandleZoom();
         ZoomCamera();
+        if(Input.GetKey(KeyCode.P))
+        {
+            SwitchCamera();
+
+        }
 
     }
 
@@ -71,5 +76,13 @@ public class CameraController : MonoBehaviour
         //Zoom in
         if (Input.GetKey(KeyCode.DownArrow))
             virtualCamera.m_Lens.FieldOfView += -0.1f;
+    }
+
+    private void SwitchCamera()
+    {
+        if (virtualCamera.m_Priority > 7)
+            virtualCamera.m_Priority = 5;
+        else
+            virtualCamera.m_Priority = 10;
     }
 }
