@@ -28,6 +28,7 @@ public class CameraController : MonoBehaviour
         rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
         rotation.x += -Input.GetAxis("Mouse Y") * lookSpeed;
 
+        //rotates the camera target according to lateral mouse movement
         this.gameObject.transform.localRotation = Quaternion.Euler(rotation.x, 0, 0);
         transform.eulerAngles = new Vector2(0, rotation.y);
     }
