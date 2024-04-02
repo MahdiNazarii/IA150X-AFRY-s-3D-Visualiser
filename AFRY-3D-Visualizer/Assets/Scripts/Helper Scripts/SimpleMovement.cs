@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AIMovement : MonoBehaviour
+public class SimpleMovement : MonoBehaviour
 {
     public Transform target; // The target to move towards
     public float moveSpeed = 5f; // Movement speed of the capsule
