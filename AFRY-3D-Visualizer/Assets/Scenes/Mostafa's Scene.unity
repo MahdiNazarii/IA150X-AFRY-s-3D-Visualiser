@@ -1023,6 +1023,51 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &657884872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657884874}
+  - component: {fileID: 657884873}
+  m_Layer: 0
+  m_Name: VehicleInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &657884873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657884872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df0fb01511eecf41aaac33dc88d1d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicles: []
+--- !u!4 &657884874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657884872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 412.75, y: 204.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &727959396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2175,7 @@ GameObject:
   - component: {fileID: 1468972931}
   - component: {fileID: 1468972933}
   - component: {fileID: 1468972932}
+  - component: {fileID: 1468972934}
   m_Layer: 0
   m_Name: HeavyMachinery
   m_TagString: Untagged
@@ -2201,6 +2247,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1468972934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468972930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6bc5b43bf8b3243b652fa20e7f563a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _VehicleID: 0
 --- !u!1001 &1505250274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3210,3 +3269,4 @@ SceneRoots:
   - {fileID: 1730597070}
   - {fileID: 994020677}
   - {fileID: 1056920373}
+  - {fileID: 657884874}

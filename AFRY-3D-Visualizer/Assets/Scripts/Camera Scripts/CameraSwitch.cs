@@ -23,7 +23,7 @@ public class CameraSwitch : MonoBehaviour
         {
             FlyingView.gameObject.SetActive(false);
             LockedView.gameObject.SetActive(true);
-            UI.ActiveLockedViewUI(0);
+            UI.ActivateLockedViewUI(0);
         }
 
     }

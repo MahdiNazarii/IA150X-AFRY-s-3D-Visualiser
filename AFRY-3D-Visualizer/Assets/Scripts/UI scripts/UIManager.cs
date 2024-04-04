@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
 
 
     }
-    public void ActiveLockedViewUI(long id)
+    public void ActivateLockedViewUI(long id)
     {
         _VehicleID.text = "Vehicle " + id;
         _AllVehicleIDs.enabled = false;
