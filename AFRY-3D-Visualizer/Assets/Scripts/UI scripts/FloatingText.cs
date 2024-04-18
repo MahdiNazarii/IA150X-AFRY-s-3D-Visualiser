@@ -10,7 +10,7 @@ public class FloatingText : MonoBehaviour
 
     public Vector3 offset;
     float minSize = 0.025f;
-    float maxSize = 0.1f;
+    float maxSize = 0.2f;
     private void Awake()
     {
         currentCamera = worldSpaceCanvas.worldCamera.transform;
@@ -46,7 +46,7 @@ public class FloatingText : MonoBehaviour
     private void ScaleTextWithCameraDistance()
     {
         float newSize = Vector3.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z)
-            , currentCamera.position);
+            , currentCamera.position)/1000;
         Debug.Log(newSize);
         newSize = Mathf.Clamp(newSize, minSize, maxSize);
         this.transform.localScale = new Vector3(newSize, newSize, newSize);

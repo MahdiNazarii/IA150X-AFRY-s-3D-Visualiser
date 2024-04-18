@@ -24,7 +24,7 @@ public class ButtonManager : MonoBehaviour
             vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(this, id-1));
             id++;
         }
-        QuickFix(length-1);
+        QuickFix(length);
     }
 
     private void SelectLevel(int idNum)
@@ -39,6 +39,6 @@ public class ButtonManager : MonoBehaviour
             vehicleButton[i].GetComponent<Button>().onClick.Invoke();
         }
         cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToFlyingView();
-        //cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToFlyingView();
+        cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToFlyingView();
     }
 }
