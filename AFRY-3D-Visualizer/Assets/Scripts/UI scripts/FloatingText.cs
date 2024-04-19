@@ -47,7 +47,7 @@ public class FloatingText : MonoBehaviour
     {
         float newSize = Vector3.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z)
             , currentCamera.position)/1000;
-        Debug.Log(newSize);
+        //Debug.Log(newSize);
         newSize = Mathf.Clamp(newSize, minSize, maxSize);
         this.transform.localScale = new Vector3(newSize, newSize, newSize);
     }

@@ -12,6 +12,9 @@ public class CameraControllerOld : MonoBehaviour
     public float rotationSpeed = 2.0f;
     public float zoomSpeed = 2.0f;
     private Vector2 rotation = Vector2.zero;
+
+    public bool canMove = true;
+
     private void Awake()
     {
         followOffset = virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset;
@@ -20,9 +23,14 @@ public class CameraControllerOld : MonoBehaviour
     private void Update()
     {
         //CursorMode =  CursorLockMode.Locked;
-        RotateCamera();
-        ZoomCamera();
+        if(canMove)
+        {
+            RotateCamera();
+            ZoomCamera();
+           
+        }
     }
+
 
     private void RotateCamera()
     {

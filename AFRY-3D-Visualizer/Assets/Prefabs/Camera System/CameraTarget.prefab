@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4501609671229763600}
   - component: {fileID: 7607676602439687338}
+  - component: {fileID: 8676432971142189522}
   m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
@@ -47,5 +48,26 @@ MonoBehaviour:
   virtualCamera: {fileID: 0}
   maxZoom: 50
   minZoom: 5
-  lookSpeed: 10
+  rotationSpeed: 2
   zoomSpeed: 2
+--- !u!135 &8676432971142189522
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621208192723865535}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.59129703
+  m_Center: {x: 0, y: 0, z: 0.09129703}
