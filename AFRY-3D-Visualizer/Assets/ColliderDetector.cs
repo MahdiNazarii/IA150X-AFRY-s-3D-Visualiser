@@ -15,7 +15,8 @@ public class ColliderDetector : MonoBehaviour
         {
             // If so, set canMove to false
             cameraTarget.GetComponent<CameraControllerOld>().canMove = false;
-           
+            Debug.Log("Collided with " + tagsToCollideWith);
+        
         }
         
     }
@@ -24,8 +25,8 @@ public class ColliderDetector : MonoBehaviour
     {
         if (collision.gameObject.tag == tagsToCollideWith)
         {
-            cameraTarget.GetComponent<CameraControllerOld>().canMove = true;
-            
+             cameraTarget.GetComponent<CameraControllerOld>().canMove = true;
+           
         }
         
     }

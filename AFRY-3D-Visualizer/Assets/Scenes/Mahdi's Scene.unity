@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -313,6 +313,11 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.54882663
   m_Center: {x: 3.167069e-11, y: 0.048826635, z: -7.66237e-10}
+--- !u!1 &743610163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 525097441595862653, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+  m_PrefabInstance: {fileID: 1093296657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1093296657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,6 +375,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7806046450062433620, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2198
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806046450062433620, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7071777
       objectReference: {fileID: 0}
@@ -396,7 +405,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 525097441595862653, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1326425427}
+    - targetCorrespondingSourceObject: {fileID: 525097441595862653, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1326425426}
   m_SourcePrefab: {fileID: 100100000, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
 --- !u!1 &1093296658 stripped
 GameObject:
@@ -602,12 +617,48 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1694418592792716912, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
   m_PrefabInstance: {fileID: 1093296657}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 743610163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &1326425426
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743610163}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1326425427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743610163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991100884d6bd4323bb50cb342aa2814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagsToCollideWith: miningEnvironment
+  canMove: 1
+  cameraTarget: {fileID: 1668249044}
 --- !u!1001 &1388484834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1059,6 +1110,11 @@ RectTransform:
 Canvas:
   m_CorrespondingSourceObject: {fileID: 5706227712150508890, guid: 881c8015072ebb04ba3da972e988cbda, type: 3}
   m_PrefabInstance: {fileID: 1598148825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1668249044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7425619714352389450, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+  m_PrefabInstance: {fileID: 1093296657}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1714325942
 PrefabInstance:
@@ -2154,6 +2210,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 642142858750782467, guid: 5cc4ee48c625440b6a03aebcc7c56d23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205983024179674199, guid: 5cc4ee48c625440b6a03aebcc7c56d23, type: 3}
+      propertyPath: m_TagString
+      value: miningEnvironment
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025450409097330965, guid: 5cc4ee48c625440b6a03aebcc7c56d23, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025450409097330965, guid: 5cc4ee48c625440b6a03aebcc7c56d23, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8017527349037637309, guid: 5cc4ee48c625440b6a03aebcc7c56d23, type: 3}
