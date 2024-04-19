@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 2009064726125267616}
   - component: {fileID: 1416416833766330462}
   - component: {fileID: 34928593460723259}
+  - component: {fileID: 6567952817358405331}
+  - component: {fileID: 9099608367441679751}
   m_Layer: 5
   m_Name: HM Buttons
   m_TagString: Untagged
@@ -239,6 +241,41 @@ MonoBehaviour:
   vehicleButton: []
   worldSpaceCanvas: {fileID: 0}
   cameraManager: {fileID: 0}
+--- !u!114 &6567952817358405331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899538117949013566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &9099608367441679751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899538117949013566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1001 &736197107423018072
 PrefabInstance:
   m_ObjectHideFlags: 0

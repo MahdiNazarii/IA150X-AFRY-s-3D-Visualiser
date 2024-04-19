@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -344,7 +344,8 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 769260101}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8619327840090961699, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1639,7 +1640,8 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 769260101}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8619327840090961699, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1939,7 +1941,8 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 769260101}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8619327840090961699, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2688,7 +2691,8 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 769260101}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8619327840090961699, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3196,7 +3200,8 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 769260101}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8619327840090961699, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3439,7 +3444,7 @@ PrefabInstance:
     - target: {fileID: 34928593460723259, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
       propertyPath: vehicleButton.Array.data[4]
       value: 
-      objectReference: {fileID: 5646952361708319380}
+      objectReference: {fileID: 0}
     - target: {fileID: 578339844138695329, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -3767,17 +3772,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 45457351}
   m_SourcePrefab: {fileID: 100100000, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
---- !u!114 &5646952361708319380 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7258141091752420303, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
-  m_PrefabInstance: {fileID: 5646952361708319379}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0461068f11076f448b914f914501c42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5646952361708319381 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8291935526366357445, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
