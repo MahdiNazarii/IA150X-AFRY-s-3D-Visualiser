@@ -23,11 +23,12 @@ public class SimpleMovement : MonoBehaviour
     void MoveTowardsTarget()
     {
         // Calculate direction towards the target
-        Vector3 direction = (target.position - transform.position).normalized;
+         Vector3 direction = (target.position - transform.position).normalized;
 
-        // Move the capsule towards the target using physics
-        rb.MovePosition(transform.position + direction * moveSpeed * Time.deltaTime);
-
+        // // Move the capsule towards the target using physics
+       // rb.MovePosition(transform.position + direction * moveSpeed * Time.deltaTime);
+        
+        //transform.position = target.position;
         // Rotate the capsule to face the target (optional)
         RotateTowardsTarget(direction);
     }
