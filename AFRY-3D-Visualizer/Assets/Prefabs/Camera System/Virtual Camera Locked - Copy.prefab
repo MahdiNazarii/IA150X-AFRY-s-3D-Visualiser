@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1252576367994725170}
   - component: {fileID: 3862647239536102396}
   m_Layer: 0
-  m_Name: Virtual Camera Locked
+  m_Name: Virtual Camera Locked - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

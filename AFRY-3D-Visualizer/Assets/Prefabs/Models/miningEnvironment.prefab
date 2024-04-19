@@ -421,6 +421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7381177674065272617}
+  - component: {fileID: 375577584300394013}
   m_Layer: 0
   m_Name: miningSite
   m_TagString: Untagged
@@ -445,3 +446,15 @@ Transform:
   - {fileID: 2712815490802690114}
   m_Father: {fileID: 642142858750782467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375577584300394013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089616371486959331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc2e03e957c9954bb7366f6b666c233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
