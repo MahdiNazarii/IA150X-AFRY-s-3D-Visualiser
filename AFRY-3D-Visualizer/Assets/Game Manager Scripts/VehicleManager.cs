@@ -12,7 +12,7 @@ public class VehicleManager : MonoBehaviour
 
         for(int i = 0; i < length; i++ )
         {
-            Vector3 position = new Vector3(VisualizerSettingsAndData.instance.vehicles[i].startingPosition.x, 4.15F,
+            Vector3 position = new Vector3(VisualizerSettingsAndData.instance.vehicles[i].startingPosition.x, vehicles[i].transform.position.y,
                                             VisualizerSettingsAndData.instance.vehicles[i].startingPosition.y);
             vehicles[i].transform.position = position;
             vehicles[i].SetActive(true);

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7049958385220614138}
   - component: {fileID: 8652831661050859171}
   m_Layer: 5
-  m_Name: VehiclePanel
+  m_Name: VehicleButtonPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,6 @@ RectTransform:
   - {fileID: 5775627614426753867}
   - {fileID: 5661912509924359240}
   - {fileID: 3117064525733240284}
-  - {fileID: 4389547391252863446}
   m_Father: {fileID: 2683142675953166290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -136,7 +135,7 @@ GameObject:
   - component: {fileID: 1416416833766330462}
   - component: {fileID: 34928593460723259}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HM Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,6 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicleButton: []
+  worldSpaceCanvas: {fileID: 0}
+  cameraManager: {fileID: 0}
 --- !u!1001 &736197107423018072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8229992185601845445, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
       propertyPath: m_Name
-      value: VehicleButton (2)
+      value: HM2L0 Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -430,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8229992185601845445, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
       propertyPath: m_Name
-      value: VehicleButton (1)
+      value: HM1L1 Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -532,7 +533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8229992185601845445, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
       propertyPath: m_Name
-      value: VehicleButton
+      value: HM1L0 Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -634,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8229992185601845445, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
       propertyPath: m_Name
-      value: VehicleButton (3)
+      value: HM2L1 Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -645,106 +646,4 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
   m_PrefabInstance: {fileID: 8063221897366789580}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8669031448115763654
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8411932538347738009}
-    m_Modifications:
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 125.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 23.470001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8229992185601845445, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-      propertyPath: m_Name
-      value: VehicleButton (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
---- !u!224 &4389547391252863446 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4946175269510561808, guid: 587958a6dec66f0479e6acf72329c5b0, type: 3}
-  m_PrefabInstance: {fileID: 8669031448115763654}
   m_PrefabAsset: {fileID: 0}

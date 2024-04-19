@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 2783565675594691411}
   - component: {fileID: 8619327840090961699}
   m_Layer: 0
-  m_Name: HeavyMachinery
+  m_Name: HMX_LY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
