@@ -156,10 +156,10 @@ public class FreeFlyCameraOld : MonoBehaviour
             return;
 
         // Translation
-        if (_enableTranslation)
-        {
-            transform.Translate(Vector3.forward * Input.mouseScrollDelta.y * Time.deltaTime * _translationSpeed);
-        }
+        // if (_enableTranslation)
+        // {
+        //     transform.Translate(Vector3.forward * Input.mouseScrollDelta.y * Time.deltaTime * _translationSpeed);
+        // }
 
         // Movement
         if (_enableMovement)
