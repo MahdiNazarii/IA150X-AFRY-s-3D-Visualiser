@@ -10,7 +10,7 @@ public class VehicleManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        SetHMIds();
+        //SetHMIds();
         int length = VisualizerSettingsAndData.instance.vehicles.Length;
 
         for(int i = 0; i < length; i++ )
@@ -22,6 +22,7 @@ public class VehicleManager : MonoBehaviour
             vehicleButtons[i].GetComponent<VehicleButton>().setVehicleText(VisualizerSettingsAndData.instance.vehicles[i].id);
             vehicleTags[i].GetComponent<FloatingText>().SetTagText(VisualizerSettingsAndData.instance.vehicles[i].id);
         }
+        InvokeRepeating("SetHMIds", 1, 20);
         
     }
 
@@ -40,4 +41,12 @@ public class VehicleManager : MonoBehaviour
             vehicles[i].GetComponent<MetaData>().SetMetaData(id, level, position);
         }
     }
+    private void setPosition(){
+        for(int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
+        {
+            vehicles[i].GetComponent<MetaData>().setCurrentPosition(VisualizerSettingsAndData.instance.vehicles[i].startingPosition);
+        }
+    }
+
+
 }

@@ -6,16 +6,16 @@ using UnityEngine;
  */
 public class MetaData : MonoBehaviour
 {
-    public int id;
+    int id;
     int level;
-    Vector3 position = new Vector3();
-    public void SetMetaData(int id, int level, Vector2 position)
+    Vector3 positionObject = new Vector3();
+    public void SetMetaData(int id, int level, Vector3 position)
     {
         this.id = id;
         this.level = level;
-        this.position.x = position.x;
-        this.position.z = position.y;
-        this.position.y = 0f;
+        this.positionObject.x = position.x;
+        this.positionObject.y = position.y;
+        this.positionObject.z = position.z;
     }
     public int GetId()
     {
@@ -26,9 +26,11 @@ public class MetaData : MonoBehaviour
         return level;
     }
 
-    public void setCurrentPosition(Vector2 position)
+    public void setCurrentPosition(Vector3 position)
     {
-        this.position.x = position.x;
-        this.position.z = position.y;
+        this.positionObject.x = position.x;
+        this.positionObject.y = position.y;
+        this.positionObject.z = position.z;
+        Debug.Log("Position: " + this.positionObject);
     }
 }

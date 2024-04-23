@@ -16,17 +16,13 @@ public class VisualizerSettingsAndData : MonoBehaviour
         public int id;
         public int level;
         // remember to switch Z and Y
-        public Vector2 startingPosition;
+        public Vector3 startingPosition;
 
     }
 
     private void Awake()
     {
         CreateSingleton();
-
-        //connectin to mscCORE
-
-        //CONFIGURE
     }
 
     void CreateSingleton()
