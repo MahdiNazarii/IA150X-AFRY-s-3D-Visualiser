@@ -29,7 +29,7 @@ public class MiddleWare : MonoBehaviour
     new Vector3(15.22f, 104.63f, 0.1f),
     new Vector3(17.4f, 113.7f, 0.1f)
 };
-    Vector3[] v2 = {
+    Vector3[] v3 = {
     new Vector3(37.8f, 140.7f, -2.094f),
     new Vector3(35.51f, 139.08f, -2.094f),
     new Vector3(33.22f, 137.46f, -2.094f),
@@ -59,7 +59,7 @@ public class MiddleWare : MonoBehaviour
     new Vector3(1.4f, 6.0f, -3.24f)
 };
 
-    Vector3[] v3 = {new Vector3 (1.4f, 6.0f, 0.1f),
+    Vector3[] v2 = {new Vector3 (1.4f, 6.0f, 0.1f),
     new Vector3 (0.82f, 7.7f, 0.1f),
     new Vector3 (0.24f, 9.4f, 0.1f),
     new Vector3 (-0.34f, 11.1f, 0.1f),
@@ -130,9 +130,11 @@ public class MiddleWare : MonoBehaviour
             VisualizerSettingsAndData.instance.vehicles[i].id = i;
             VisualizerSettingsAndData.instance.vehicles[i].level = i % 2;
         }
+       
         InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
 
     }
+    
     private void SetVehicleDataEverySecond()
     {
         if(index<points){
