@@ -38,7 +38,7 @@ public class MiddleWare : MonoBehaviour
     new Vector3(26.35f, 132.6f, -2.094f),
     new Vector3(24.06f, 130.98f, -2.094f),
     new Vector3(21.77f, 129.36f, -2.094f),
-    new Vector3(19.48f, 127.74f, -2.094f),
+    new Vector3(19.48f, 127.74f, -1.094f),
     new Vector3(17.19f, 126.12f, -2.618f),
     new Vector3(17.02f, 119.92f, -3.24f),
     new Vector3(15.87f, 110.66f, -2.818f),
@@ -130,7 +130,7 @@ public class MiddleWare : MonoBehaviour
             VisualizerSettingsAndData.instance.vehicles[i].id = i;
             VisualizerSettingsAndData.instance.vehicles[i].level = i % 2;
         }
-        InvokeRepeating("SetVehicleDataEverySecond", 1, points);
+        InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
 
     }
     private void SetVehicleDataEverySecond()

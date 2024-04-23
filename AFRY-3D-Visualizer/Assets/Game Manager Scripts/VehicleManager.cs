@@ -22,7 +22,8 @@ public class VehicleManager : MonoBehaviour
             vehicleButtons[i].GetComponent<VehicleButton>().setVehicleText(VisualizerSettingsAndData.instance.vehicles[i].id);
             vehicleTags[i].GetComponent<FloatingText>().SetTagText(VisualizerSettingsAndData.instance.vehicles[i].id);
         }
-        InvokeRepeating("SetHMIds", 1, 20);
+        SetHMIds();
+        InvokeRepeating("SetPosition", 0, 1);
         
     }
 
@@ -41,7 +42,7 @@ public class VehicleManager : MonoBehaviour
             vehicles[i].GetComponent<MetaData>().SetMetaData(id, level, position);
         }
     }
-    private void setPosition(){
+    private void SetPosition(){
         for(int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
         {
             vehicles[i].GetComponent<MetaData>().setCurrentPosition(VisualizerSettingsAndData.instance.vehicles[i].startingPosition);

@@ -4,7 +4,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Collections;
 
-public class coordinateBasedMovementHM1L0 : MonoBehaviour
+public class coordinateBasedMovement : MonoBehaviour
 {
     public Vector3? targetPosition = null;
 
@@ -57,7 +57,8 @@ public class coordinateBasedMovementHM1L0 : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(MoveThroughCoordinates());
+        InvokeRepeating("MovementSystem", 0, 1);
+        //StartCoroutine(MoveThroughCoordinates());
     }
 
     IEnumerator MoveThroughCoordinates()
@@ -76,14 +77,27 @@ public class coordinateBasedMovementHM1L0 : MonoBehaviour
             yield return new WaitForSeconds(1); // Wait for 1 second before moving to the next position
         }
     }
+    public void MovementSystem()
+    {
+        float x = this.GetComponent<MetaData>().positionObject.x;
+        float z = this.GetComponent<MetaData>().positionObject.y;
+        float angle = this.GetComponent<MetaData>().positionObject.z;
+        MoveObjectToPosition(x, z, angle );
+        SetOrientation();
+    }
 
     public void MoveObjectToPosition(float xPosition, float zPosition, float angleInRadians)
     {
         float yPosition = transform.position.y; // Default to current y-position
-
+        LayerMask layerMask;
         // Define a layer mask that only includes the mining road layer
-        int layerMask = LayerMask.GetMask("MiningEnvL0");
-
+        int level = this.GetComponent<MetaData>().GetLevel();
+        if (level == 0)
+            layerMask = LayerMask.GetMask("MiningEnvL0");
+        else
+        {
+            layerMask = LayerMask.GetMask("MiningEnvL1");
+        }
         Ray ray = new Ray(new Vector3(xPosition, 1000, zPosition), Vector3.down);
         // Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 2f);
         RaycastHit hit;
@@ -107,7 +121,7 @@ public class coordinateBasedMovementHM1L0 : MonoBehaviour
         //Debug.Log("Distance to target: " + distanceToTarget + " Target position: " + targetPosition.Value);
     }
 
- void Update()
+ private void SetOrientation()
 {
     if (targetPosition != null)
     {   
@@ -123,8 +137,16 @@ public class coordinateBasedMovementHM1L0 : MonoBehaviour
             new Vector3(carWidth / 2, 0, carLength / 2)
         };
 
-    
-        int layerMask = LayerMask.GetMask("MiningEnvL0");
+        LayerMask layerMask;
+        // Define a layer mask that only includes the mining road layer
+        int level = this.GetComponent<MetaData>().GetLevel();
+        if (level == 0)
+            layerMask = LayerMask.GetMask("MiningEnvL0");
+        else
+        {
+            layerMask = LayerMask.GetMask("MiningEnvL1");
+        }
+
         Vector3 averageNormal = Vector3.zero;
         foreach (Vector3 offset in offsets)
         {

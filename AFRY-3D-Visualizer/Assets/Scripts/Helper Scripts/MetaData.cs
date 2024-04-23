@@ -8,7 +8,7 @@ public class MetaData : MonoBehaviour
 {
     int id;
     int level;
-    Vector3 positionObject = new Vector3();
+    public Vector3 positionObject;
     public void SetMetaData(int id, int level, Vector3 position)
     {
         this.id = id;
