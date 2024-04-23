@@ -4,15 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - MiningEnvL0
+  - MiningEnvL1
   - miningEnvironment
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - MiningRoad
+  - MiningEnvL0
   - Water
   - UI
-  - 
+  - MiningEnvL1
   - 
   - 
   - 

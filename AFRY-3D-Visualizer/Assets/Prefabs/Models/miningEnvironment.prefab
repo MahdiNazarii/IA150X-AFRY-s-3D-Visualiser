@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 2712815490802690114}
   - component: {fileID: 2497752307356180411}
   - component: {fileID: 7139532163170248756}
-  - component: {fileID: 2025450409097330965}
   m_Layer: 0
   m_Name: miningEnterior
   m_TagString: Untagged
@@ -167,28 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2025450409097330965
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205983024179674199}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -811839379091599071, guid: 318c7a52f541049e1b49b275a554addd, type: 3}
 --- !u!1 &1592441392548465692
 GameObject:
   m_ObjectHideFlags: 0

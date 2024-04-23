@@ -29,7 +29,7 @@ public class ButtonManager : MonoBehaviour
 
     private void SelectLevel(int idNum)
     {
-        Debug.Log("Switch to Vehicle " + idNum);
+        //Debug.Log("Switch to Vehicle " + idNum);
 
     }
     private void QuickFix(int length)
