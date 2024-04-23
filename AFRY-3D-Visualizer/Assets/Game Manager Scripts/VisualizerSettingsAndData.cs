@@ -23,6 +23,10 @@ public class VisualizerSettingsAndData : MonoBehaviour
     private void Awake()
     {
         CreateSingleton();
+
+        //connectin to mscCORE
+
+        //CONFIGURE
     }
 
     void CreateSingleton()

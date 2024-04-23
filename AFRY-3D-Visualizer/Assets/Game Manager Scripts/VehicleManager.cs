@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class VehicleManager : MonoBehaviour
 {
-    public GameObject[] vehicles;
-
+    [SerializeField] GameObject[] vehicles;
     [SerializeField] GameObject[] vehicleButtons;
+    [SerializeField] GameObject[] vehicleTags;
     // Start is called before the first frame update
     private void Start()
     {
@@ -20,6 +20,7 @@ public class VehicleManager : MonoBehaviour
             vehicles[i].transform.position = position;
             vehicles[i].SetActive(true);
             vehicleButtons[i].GetComponent<VehicleButton>().setVehicleText(VisualizerSettingsAndData.instance.vehicles[i].id);
+            vehicleTags[i].GetComponent<FloatingText>().SetTagText(VisualizerSettingsAndData.instance.vehicles[i].id);
         }
         
     }

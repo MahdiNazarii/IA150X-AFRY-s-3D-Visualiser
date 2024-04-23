@@ -8,7 +8,6 @@ public class ButtonManager : MonoBehaviour
     public VehicleButton[] vehicleButton;
     public Canvas worldSpaceCanvas;
     public GameObject cameraManager;
-   //public GameObject worldSpaceCanvas;
 
     private void Start()
     {
@@ -18,7 +17,6 @@ public class ButtonManager : MonoBehaviour
         {
             int j = i;
             vehicleButton[i].gameObject.SetActive(true);
-            //vehicleButton[i].vehicleText.text = "HM" + VisualizerSettingsAndData.instance.vehicles[j].id.ToString();
             vehicleButton[i].GetComponent<Button>().onClick.RemoveAllListeners();
             vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(j - 1));
             vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(this, j-1));

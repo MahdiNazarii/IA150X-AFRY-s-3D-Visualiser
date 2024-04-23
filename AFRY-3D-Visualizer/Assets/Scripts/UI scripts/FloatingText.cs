@@ -31,11 +31,6 @@ public class FloatingText : MonoBehaviour
             RotateToCamera();
             FollowParentVehicle();
             ScaleTextWithCameraDistance();
-            //zoomlevel = transform.localScale.magnitude
-            //zoomLevel = (float) 0.2 * (transform.position - currentCamera.position).magnitude;
-            //transform.localScale *= zoomLevel;
-
-
         }
     }
     private void RotateToCamera()
@@ -59,15 +54,9 @@ public class FloatingText : MonoBehaviour
     {
         currentCamera = newCamera.transform;
     }
-    //public bool ZoomingOut()
-    //{
-    //    newPosition = transform.position - currentCamera.position;
-    //
-    //    if (!oldPosition.Equals(newPosition))
-    //zoomLevel = (newPosition.magnitude);
-    //       return true;
-    //  else
-    //    return false;
 
-    //}
+    public void SetTagText(int id)
+    {
+        this.GetComponent<TextMeshProUGUI>().text = "HM" + id.ToString();
+    }
 }
