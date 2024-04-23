@@ -7,4 +7,9 @@ using UnityEngine.UI;
 public class VehicleButton : MonoBehaviour
 {
     public TextMeshProUGUI vehicleText;
+
+    public void setVehicleText(int id)
+    {
+        vehicleText.text = "HM" + id.ToString();
+    }
 }
