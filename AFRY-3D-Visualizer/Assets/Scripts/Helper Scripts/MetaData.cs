@@ -6,10 +6,10 @@ using UnityEngine;
  */
 public class MetaData : MonoBehaviour
 {
-    int id;
+    public int id;
     int level;
-    Vector3 position;
-    public MetaData(int id, int level, Vector2 position)
+    Vector3 position = new Vector3();
+    public void SetMetaData(int id, int level, Vector2 position)
     {
         this.id = id;
         this.level = level;
@@ -29,6 +29,6 @@ public class MetaData : MonoBehaviour
     public void setCurrentPosition(Vector2 position)
     {
         this.position.x = position.x;
-        this.position.Z = position.y;
+        this.position.z = position.y;
     }
 }

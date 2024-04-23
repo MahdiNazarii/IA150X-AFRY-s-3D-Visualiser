@@ -16,13 +16,13 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("There are " + length + " vehicles");
         for(int i = 0; i < length; i++)
         {
-            int id = i;
+            int j = i;
             vehicleButton[i].gameObject.SetActive(true);
-            vehicleButton[i].vehicleText.text = "Vehicle" + (i+1).ToString();
+            vehicleButton[i].vehicleText.text = "HM" + VisualizerSettingsAndData.instance.vehicles[j].id.ToString();
             vehicleButton[i].GetComponent<Button>().onClick.RemoveAllListeners();
-            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(id - 1));
-            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(this, id-1));
-            id++;
+            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(j - 1));
+            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(this, j-1));
+            j++;
         }
         QuickFix(length);
     }

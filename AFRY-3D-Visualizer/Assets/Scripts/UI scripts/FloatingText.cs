@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class FloatingText : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class FloatingText : MonoBehaviour
     Transform vehicle;
     [SerializeField]
     Canvas worldSpaceCanvas;
+ 
 
     public Vector3 offset;
     float minSize = 0.025f;
@@ -14,6 +16,7 @@ public class FloatingText : MonoBehaviour
     private void Awake()
     {
         currentCamera = worldSpaceCanvas.worldCamera.transform;
+        this.GetComponent<TextMeshProUGUI>().text = vehicle.GetComponent<MetaData>().GetId().ToString();
 
         if (worldSpaceCanvas == null)
         {

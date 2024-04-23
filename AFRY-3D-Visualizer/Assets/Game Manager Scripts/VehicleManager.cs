@@ -8,6 +8,7 @@ public class VehicleManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        SetHMIds();
         int length = VisualizerSettingsAndData.instance.vehicles.Length;
 
         for(int i = 0; i < length; i++ )
@@ -18,5 +19,21 @@ public class VehicleManager : MonoBehaviour
             vehicles[i].SetActive(true);
         }
         
+    }
+
+    private void SetHMIds()
+    {
+        int length = VisualizerSettingsAndData.instance.vehicles.Length;
+        int id;
+        int level;
+        Vector2 position;
+
+        for (int i = 0; i <  length; i++)
+        {
+            id = VisualizerSettingsAndData.instance.vehicles[i].id;
+            level = VisualizerSettingsAndData.instance.vehicles[i].level;
+            position = VisualizerSettingsAndData.instance.vehicles[i].startingPosition;
+            vehicles[i].GetComponent<MetaData>().SetMetaData(id, level, position);
+        }
     }
 }
