@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5828888945918520415}
   - component: {fileID: 191502861543797766}
   - component: {fileID: 8188471378150215530}
+  - component: {fileID: 2963110079659057588}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,13 +49,13 @@ MonoBehaviour:
   vehicles:
   - id: 1
     level: 0
-    startingPosition: {x: -27, y: -70}
+    startingPosition: {x: -27, y: -70, z: 0}
   - id: 2
     level: 0
-    startingPosition: {x: 47, y: -58}
+    startingPosition: {x: 47, y: -58, z: 0}
   - id: 3
     level: 0
-    startingPosition: {x: 43.5, y: 27}
+    startingPosition: {x: 43.5, y: 27, z: 0}
   activeVehicle: 0
 --- !u!114 &8188471378150215530
 MonoBehaviour:
@@ -74,3 +75,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  vehicleButtons: []
+  vehicleTags: []
+--- !u!114 &2963110079659057588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216796959305242315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe41956fb3a94a21b95116cce530c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

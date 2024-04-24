@@ -11,72 +11,17 @@ public class coordinateBasedMovement : MonoBehaviour
     float carWidth = 1.84f;
     float carLength = 1.52f;
 
+    public FloatingText floatingText;
+
 
    
-
-    float[][] coordinates = {
-    new float[] {1.4f, 6.0f, 0.1f},
-    new float[] {0.82f, 7.7f, 0.1f},
-    new float[] {0.24f, 9.4f, 0.1f},
-    new float[] {-0.34f, 11.1f, 0.1f},
-    new float[] {-0.92f, 12.8f, 0.1f},
-    new float[] {-1.5f, 14.5f, 0.1f},
-    new float[] {-2.08f, 16.2f, 0.1f},
-    new float[] {-2.66f, 17.9f, 0.1f},
-    new float[] {-3.24f, 19.6f, 0.1f},
-    new float[] {-3.82f, 21.3f, 0.1f},
-    new float[] {-4.4f, 23.0f, 0.1f},
-    new float[] {-2.22f, 32.07f, 0.1f},
-    new float[] {-0.04f, 41.14f, 0.1f},
-    new float[] {2.14f, 50.21f, 0.1f},
-    new float[] {4.32f, 59.28f, 0.1f},
-    new float[] {6.5f, 68.35f, 0.1f},
-    new float[] {8.68f, 77.42f, 0.1f},
-    new float[] {10.86f, 86.49f, 0.1f},
-    new float[] {13.04f, 95.56f, 0.1f},
-    new float[] {15.22f, 104.63f, 0.1f},
-    new float[] {17.4f, 113.7f, 0.1f}
-    };
-
-
-    // public void SetTargetPositionFromInput()
-    // {
-    //     float xPosition = float.Parse(xInput.text);
-    //     float zPosition = float.Parse(zInput.text);
-    //     float angle = float.Parse(angleInput.text);
-        
-    //      // If the target position is the same as the previous one, return early
-    //     if (targetPosition.HasValue && targetPosition.Value.x == xPosition && targetPosition.Value.z == zPosition)
-    //     {
-    //         return;
-    //     }
-    //     MoveObjectToPosition(xPosition, zPosition, angle);
-
-    // }
 
 
     void Start()
     {
         InvokeRepeating("MovementSystem", 0, 1);
-        //StartCoroutine(MoveThroughCoordinates());
     }
 
-    // IEnumerator MoveThroughCoordinates()
-    // {
-    //     int index = 0;
-    //     while (index < coordinates.Length)
-    //     {
-    //         float[] position = coordinates[index];
-    //         float xPosition = position[0];
-    //         float zPosition = position[1];
-    //         float angle = position[2];
-    //         MoveObjectToPosition(xPosition, zPosition, angle);
-
-    //         index++;
-
-    //         yield return new WaitForSeconds(1); // Wait for 1 second before moving to the next position
-    //     }
-    // }
     public void MovementSystem()
     {
         float x = this.GetComponent<MetaData>().positionObject.x;
@@ -84,6 +29,8 @@ public class coordinateBasedMovement : MonoBehaviour
         float angle = this.GetComponent<MetaData>().positionObject.z;
         MoveObjectToPosition(x, z, angle );
         SetOrientation();
+        // move the corresponding tag of the HM
+        floatingText.GetComponent<FloatingText>().FollowParentVehicle();
     }
 
     public void MoveObjectToPosition(float xPosition, float zPosition, float angleInRadians)

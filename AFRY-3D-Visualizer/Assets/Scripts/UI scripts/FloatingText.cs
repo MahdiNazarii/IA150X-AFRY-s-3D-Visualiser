@@ -29,7 +29,7 @@ public class FloatingText : MonoBehaviour
         if (worldSpaceCanvas != null)
         {
             RotateToCamera();
-            FollowParentVehicle();
+            //FollowParentVehicle();
             ScaleTextWithCameraDistance();
         }
     }
@@ -37,7 +37,7 @@ public class FloatingText : MonoBehaviour
     {
         transform.rotation = Quaternion.LookRotation(transform.position - currentCamera.position);
     }
-    private void FollowParentVehicle()
+    public void FollowParentVehicle()
     {
         transform.position = vehicle.position + offset;
     }

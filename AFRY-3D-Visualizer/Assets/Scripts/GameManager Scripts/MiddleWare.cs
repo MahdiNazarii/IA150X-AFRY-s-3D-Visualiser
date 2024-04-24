@@ -127,6 +127,7 @@ public class MiddleWare : MonoBehaviour
     {
         for (int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
         {
+            // ids are arbitrary here and should be replaced from metadata
             VisualizerSettingsAndData.instance.vehicles[i].id = i;
             VisualizerSettingsAndData.instance.vehicles[i].level = i % 2;
         }
