@@ -9,6 +9,7 @@ public class EventCameraSwitcher : MonoBehaviour
     CinemachineVirtualCamera[] allCameras;
     [SerializeField]
     FloatingText[] allTexts;
+
     [SerializeField] CinemachineVirtualCamera flying;
 
     public void UpdateWorldSpaceCanvasCamera(Component sender, object data)

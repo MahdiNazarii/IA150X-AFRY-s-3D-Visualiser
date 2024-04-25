@@ -6,6 +6,7 @@ public class MiddleWare : MonoBehaviour
 {
     private int points=20;
     int index = 0;
+    
    Vector3[] v1 = {
     new Vector3(1.4f, 6.0f, 0.1f),
     new Vector3(0.82f, 7.7f, 0.1f),
@@ -111,6 +112,7 @@ public class MiddleWare : MonoBehaviour
     new Vector3 (1.4f, 6.0f, -3.24f)
     };
 
+    Vector3[][] combinedArray = new Vector3[][] {};
 
     [System.Serializable]
     public struct Vehicle
@@ -125,6 +127,7 @@ public class MiddleWare : MonoBehaviour
     
     private void Start()
     {
+        combinedArray = new Vector3[][] {v1, v2, v3, v4};
         for (int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
         {
             // ids are arbitrary here and should be replaced from metadata
@@ -138,12 +141,12 @@ public class MiddleWare : MonoBehaviour
     
     private void SetVehicleDataEverySecond()
     {
+    
         if(index<points){
-            VisualizerSettingsAndData.instance.vehicles[0].startingPosition = v1[index];
-            VisualizerSettingsAndData.instance.vehicles[1].startingPosition = v2[index];
-            VisualizerSettingsAndData.instance.vehicles[2].startingPosition = v3[index];
-            VisualizerSettingsAndData.instance.vehicles[3].startingPosition = v4[index];
-
+            for(int i = 0; i< VisualizerSettingsAndData.instance.vehicles.Length; i++)
+            {
+                VisualizerSettingsAndData.instance.vehicles[index].startingPosition = combinedArray[i][index];
+            }
             index++;
         }
 
