@@ -128,10 +128,11 @@ public class MiddleWare : MonoBehaviour
     private void Start()
     {
         combinedArray = new Vector3[][] {v1, v2, v3, v4};
+
         for (int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
         {
             // ids are arbitrary here and should be replaced from metadata
-            VisualizerSettingsAndData.instance.vehicles[i].id = i;
+            VisualizerSettingsAndData.instance.vehicles[i].id = i+1;
             VisualizerSettingsAndData.instance.vehicles[i].level = i % 2;
         }
        
@@ -145,7 +146,7 @@ public class MiddleWare : MonoBehaviour
         if(index<points){
             for(int i = 0; i< VisualizerSettingsAndData.instance.vehicles.Length; i++)
             {
-                VisualizerSettingsAndData.instance.vehicles[index].startingPosition = combinedArray[i][index];
+                VisualizerSettingsAndData.instance.vehicles[i].startingPosition = combinedArray[i][index];
             }
             index++;
         }

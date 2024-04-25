@@ -31,6 +31,5 @@ public class MetaData : MonoBehaviour
         this.positionObject.x = position.x;
         this.positionObject.y = position.y;
         this.positionObject.z = position.z;
-        Debug.Log("Position: " + this.positionObject);
     }
 }

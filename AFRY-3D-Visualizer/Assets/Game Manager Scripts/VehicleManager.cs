@@ -19,7 +19,9 @@ public class VehicleManager : MonoBehaviour
                                             VisualizerSettingsAndData.instance.vehicles[i].startingPosition.y);
             vehicles[i].transform.position = position;
             vehicles[i].SetActive(true);
+            vehicleButtons[i].SetActive(true);
             vehicleButtons[i].GetComponent<VehicleButton>().setVehicleText(VisualizerSettingsAndData.instance.vehicles[i].id);
+            vehicleTags[i].SetActive(true);
             vehicleTags[i].GetComponent<FloatingText>().SetTagText(VisualizerSettingsAndData.instance.vehicles[i].id);
         }
         SetHMIdsAndPosition();
