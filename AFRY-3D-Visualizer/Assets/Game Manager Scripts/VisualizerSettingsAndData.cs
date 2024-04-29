@@ -13,10 +13,15 @@ public class VisualizerSettingsAndData : MonoBehaviour
     [System.Serializable]
     public struct Vehicle
     {
-        public int id;
-        public int level;
-        // remember to switch Z and Y
-        public Vector3 startingPosition;
+        // public int id;
+        // public int level;
+        // // remember to switch Z and Y
+        // public Vector3 startingPosition;
+        public int machine_id;
+        public int machine_type;
+        public string machine_external_id;
+        public int serial_number;
+        public int status;
 
     }
 

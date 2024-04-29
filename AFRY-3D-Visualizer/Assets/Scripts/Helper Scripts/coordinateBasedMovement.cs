@@ -30,7 +30,7 @@ public class coordinateBasedMovement : MonoBehaviour
         MoveObjectToPosition(x, z, angle );
         SetOrientation();
         // move the corresponding tag of the HM
-        floatingText.GetComponent<FloatingText>().FollowParentVehicle();
+        floatingText.GetComponent<FloatingText>().FollowParentVehicle(); //shoulld not be here
     }
 
     public void MoveObjectToPosition(float xPosition, float zPosition, float angleInRadians)

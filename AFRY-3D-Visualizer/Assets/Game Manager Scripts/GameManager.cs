@@ -27,19 +27,21 @@ public class GameManager : MonoBehaviour
 
     private void InitializeVehicles()
     {
-        int id;
-        int level;
-        Vector2 position;
+        // int id;
+        // int level;
+        // Vector2 position;
 
-        for (int i = 0; i <  length; i++)
-        {
-            id = VisualizerSettingsAndData.instance.vehicles[i].id;
-            level = VisualizerSettingsAndData.instance.vehicles[i].level;
-            position = VisualizerSettingsAndData.instance.vehicles[i].startingPosition;
-            vehicles[i].SetActive(true);
-            vehicles[i].GetComponent<MetaData>().SetMetaData(id, level, position);
+        // for (int i = 0; i <  length; i++)
+        // {
+        //     id = VisualizerSettingsAndData.instance.vehicles[i].id;
+        //     level = VisualizerSettingsAndData.instance.vehicles[i].level;
+        //     position = VisualizerSettingsAndData.instance.vehicles[i].startingPosition;
+        //     vehicles[i].SetActive(true);
+        //     vehicles[i].GetComponent<MetaData>().SetMetaData(id, level, position);
 
-        }
+        // }
+
+        
     }
     private void InitializeButtons()
     {
