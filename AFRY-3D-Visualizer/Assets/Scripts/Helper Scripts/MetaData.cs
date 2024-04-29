@@ -2,28 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /*
- * This script sets the id, level and position data of the HeasvyMachines (HMs)
+ * This script sets meta data for a vehicle (HMs)
  */
 public class MetaData : MonoBehaviour
 {
-    int id;
-    int level;
+    int machineId;
+    string machineName;
+    int machineType;
+    int serialNumber;
+    int status;
     public Vector3 positionObject;
-    public void SetMetaData(int id, int level, Vector3 position)
+    public void SetMetaData(int machine_id, string machine_external_id, int machine_type, int serial_number, int status)
     {
-        this.id = id;
-        this.level = level;
-        this.positionObject.x = position.x;
-        this.positionObject.y = position.y;
-        this.positionObject.z = position.z;
+        this.machineId = machine_id;
+        this.machineName = machine_external_id;
+        this.machineType = machine_type;
+        this.serialNumber = serial_number;
+        this.status = status;
     }
     public int GetId()
     {
-        return id;
+        return machineId;
     }
-    public int GetLevel()
+    public string GetMachineName()
     {
-        return level;
+        return machineName;
     }
 
     public void setCurrentPosition(Vector3 position)
