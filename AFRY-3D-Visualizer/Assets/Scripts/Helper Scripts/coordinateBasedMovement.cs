@@ -13,21 +13,32 @@ public class coordinateBasedMovement : MonoBehaviour
 
     public FloatingText floatingText;
 
+    float level = 0;
+
 
    
 
 
     void Start()
     {
-        InvokeRepeating("MovementSystem", 0, 1);
+       // InvokeRepeating("MovementSystem", 0, 1);
     }
 
-    public void MovementSystem()
+    // public void MovementSystem()
+    // {
+    //     float x = this.GetComponent<MetaData>().positionObject.x;
+    //     float z = this.GetComponent<MetaData>().positionObject.y;
+    //     float angle = this.GetComponent<MetaData>().positionObject.z;
+    //     MoveObjectToPosition(x, z, angle );
+    //     SetOrientation();
+    //     // move the corresponding tag of the HM
+    //     floatingText.GetComponent<FloatingText>().FollowParentVehicle(); //shoulld not be here
+    // }
+
+    public void MovementSystem(float x,float z, float angle, float lev)
     {
-        float x = this.GetComponent<MetaData>().positionObject.x;
-        float z = this.GetComponent<MetaData>().positionObject.y;
-        float angle = this.GetComponent<MetaData>().positionObject.z;
-        MoveObjectToPosition(x, z, angle );
+        level = lev;
+        MoveObjectToPosition(x, z, angle);
         SetOrientation();
         // move the corresponding tag of the HM
         floatingText.GetComponent<FloatingText>().FollowParentVehicle(); //shoulld not be here
@@ -38,7 +49,7 @@ public class coordinateBasedMovement : MonoBehaviour
         float yPosition = transform.position.y; // Default to current y-position
         LayerMask layerMask;
         // Define a layer mask that only includes the mining road layer
-        int level = this.GetComponent<MetaData>().GetLevel();
+        //int level = this.GetComponent<MetaData>().GetLevel();
         if (level == 0)
             layerMask = LayerMask.GetMask("MiningEnvL0");
         else
@@ -86,7 +97,7 @@ public class coordinateBasedMovement : MonoBehaviour
 
         LayerMask layerMask;
         // Define a layer mask that only includes the mining road layer
-        int level = this.GetComponent<MetaData>().GetLevel();
+        //int level = this.GetComponent<MetaData>().GetLevel();
         if (level == 0)
             layerMask = LayerMask.GetMask("MiningEnvL0");
         else

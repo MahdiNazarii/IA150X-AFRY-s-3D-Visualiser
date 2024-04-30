@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
 
     private void Start()
     {
-        int length = VisualizerSettingsAndData.instance.vehicles.Length;
+        int length = VehicleConfiguration.instance.vehicles.Count;
         for(int i = 0; i < length; i++)
         {
             int j = i;

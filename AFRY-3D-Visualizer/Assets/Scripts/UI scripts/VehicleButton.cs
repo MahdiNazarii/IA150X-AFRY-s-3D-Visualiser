@@ -8,8 +8,8 @@ public class VehicleButton : MonoBehaviour
 {
     public TextMeshProUGUI vehicleText;
 
-    public void setVehicleText(int id)
+    public void setVehicleText(string machineName)
     {
-        vehicleText.text = "HM" + id.ToString();
+        vehicleText.text = machineName;
     }
 }

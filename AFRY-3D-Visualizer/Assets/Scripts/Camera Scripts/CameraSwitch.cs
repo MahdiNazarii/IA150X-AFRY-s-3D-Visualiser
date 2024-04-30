@@ -40,7 +40,7 @@ public class CameraSwitch : MonoBehaviour
 
     public void OnClickSwitchToVehicle(int id)
     {
-        VisualizerSettingsAndData.instance.activeVehicle = id;
+        VehicleConfiguration.instance.activeVehicle = id;
         //FlyingView.GetComponent<FreeFlyCamera>().enabled = false;
         
         LockedVehicleView[current].gameObject.SetActive(false);

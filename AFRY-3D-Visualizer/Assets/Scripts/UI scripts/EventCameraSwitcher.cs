@@ -15,8 +15,8 @@ public class EventCameraSwitcher : MonoBehaviour
     public void UpdateWorldSpaceCanvasCamera(Component sender, object data)
     {
         //Debug.Log(this.ToString() + "Data being sent?" + data.ToString());
-        this.gameObject.GetComponent<Canvas>().worldCamera = allCameras[VisualizerSettingsAndData.instance.activeVehicle].GetComponent<Camera>();
-        for(int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
+        this.gameObject.GetComponent<Canvas>().worldCamera = allCameras[VehicleConfiguration.instance.activeVehicle].GetComponent<Camera>();
+        for(int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
         {
            allTexts[i].SwitchCamera(this.gameObject.GetComponent<Canvas>().worldCamera);
         }
@@ -26,7 +26,7 @@ public class EventCameraSwitcher : MonoBehaviour
     {
         //Debug.Log(this.ToString() + "Data being sent?" + data.ToString());
         this.gameObject.GetComponent<Canvas>().worldCamera = flying.GetComponent<Camera>();
-        for (int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
+        for (int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
         {
             allTexts[i].SwitchCamera(this.gameObject.GetComponent<Canvas>().worldCamera);
         }

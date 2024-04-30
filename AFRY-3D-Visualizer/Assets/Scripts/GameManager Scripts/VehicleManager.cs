@@ -2,32 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiddleWare : MonoBehaviour
+public class VehicleManager : MonoBehaviour
 {
     private int points=20;
     int index = 0;
+    [SerializeField] GameObject[] vehicle;
 
-    // the vector containing {id, level, x,z, angle} which represent the data from MCS-Core
+//     // the vector containing {id, level, x,z, angle} which represent the data from MCS-Core
     
-    /*public struct McsCoreMatrix
-    {
-        public string[,] elements; // 4 rows, 5 columns a row: {id, level, xp, yp, angle}
+//     /*public struct McsCoreMatrix
+//     {
+//         public string[,] elements; // 4 rows, 5 columns a row: {id, level, xp, yp, angle}
 
-        public McsCoreMatrix{int rows, int columns}
-        {
-            elements = new string[rows, columns];
+//         public McsCoreMatrix{int rows, int columns}ƒ
+//         {
+//             elements = new string[rows, columns];
 
-        }
+//         }
 
-        public void FillRow{int index, string id, string level, string xp, string yp, string angle}
-        {
+//         public void FillRow{int index, string id, string level, string xp, string yp, string angle}
+//         {
 
-            elements[index][0] = id;
-            elements[index][0] = id;
-        }
-    }*/
+//             elements[index][0] = id;
+//             elements[index][0] = id;
+//         }
+//     }*/
 
-    //McsCoreMatrix[] data;
+//     //McsCoreMatrix[] data;
 
     
    float[][] v1 = new float[][]
@@ -139,38 +140,42 @@ public class MiddleWare : MonoBehaviour
 
     float[][][] combinedArray = new float[][][] {};
 
-    [System.Serializable]
-    public struct Vehicle
-    {
-        public int id;
-        public int level;
-        // remember to switch Z and Y
-        public Vector2 startingPosition;
+    // [System.Serializable]
+    // public struct Vehicle
+    // {
+    //     public int id;
+    //     public int level;
+    //     // remember to switch Z and Y
+    //     public Vector2 startingPosition;
 
-    }
+    // }
 
     
-    private void Start() {
-        combinedArray = new float[][][] {v1, v2, v3, v4};
+    void Start() {
+        combinedArray = new float[][][] {v1, v3, v2, v4};
 
-        for (int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
-        {
-            // ids are arbitrary here and should be replaced from metadata
-            VisualizerSettingsAndData.instance.vehicles[i].id = i+1;
-            VisualizerSettingsAndData.instance.vehicles[i].level = i % 2;
-        }
+        // for (int i = 0; i < VisualizerSettingsAndData.instance.vehicles.Length; i++)
+        // {
+        //     // ids are arbitrary here and should be replaced from metadata
+        //     VisualizerSettingsAndData.instance.vehicles[i].id = i+1;
+        //     VisualizerSettingsAndData.instance.vehicles[i].level = i % 2;
+        // }
        
-        InvokeRepeating{"SetVehicleDataEverySecond", 0, 1};
+        InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
 
     }
     
-    private void SetVehicleDataEverySecond{}
+    private void SetVehicleDataEverySecond()
     {
-    
-        if(index<points){
-            for (int i = 0; i< VisualizerSettingsAndData.instance.vehicles.Length; i++)
+        if (index < points)
+        {
+            for (int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
             {
-                VisualizerSettingsAndData.instance.vehicles[i].startingPosition = combinedArray[i][index];
+                //VehicleConfiguration.instance.vehicles[i].startingPosition = combinedArray[i][index]; 
+                if (vehicle[i].GetComponent<MetaData>().GetId() == combinedArray[i][index][0])
+                {   
+                    vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(combinedArray[i][index][2], combinedArray[i][index][3], combinedArray[i][index][4], combinedArray[i][index][1]);
+                }
             }
             index++;
         }

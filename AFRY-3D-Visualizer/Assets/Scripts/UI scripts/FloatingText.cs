@@ -55,8 +55,8 @@ public class FloatingText : MonoBehaviour
         currentCamera = newCamera.transform;
     }
 
-    public void SetTagText(int id)
+    public void SetTagText(string machineName)
     {
-        this.GetComponent<TextMeshProUGUI>().text = "HM" + id.ToString();
+        this.GetComponent<TextMeshProUGUI>().text = machineName;
     }
 }
