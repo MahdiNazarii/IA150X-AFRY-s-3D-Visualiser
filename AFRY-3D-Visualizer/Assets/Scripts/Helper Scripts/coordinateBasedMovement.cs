@@ -16,25 +16,6 @@ public class coordinateBasedMovement : MonoBehaviour
     float level = 0;
 
 
-   
-
-
-    void Start()
-    {
-       // InvokeRepeating("MovementSystem", 0, 1);
-    }
-
-    // public void MovementSystem()
-    // {
-    //     float x = this.GetComponent<MetaData>().positionObject.x;
-    //     float z = this.GetComponent<MetaData>().positionObject.y;
-    //     float angle = this.GetComponent<MetaData>().positionObject.z;
-    //     MoveObjectToPosition(x, z, angle );
-    //     SetOrientation();
-    //     // move the corresponding tag of the HM
-    //     floatingText.GetComponent<FloatingText>().FollowParentVehicle(); //shoulld not be here
-    // }
-
     public void MovementSystem(float x,float z, float angle, float lev)
     {
         level = lev;

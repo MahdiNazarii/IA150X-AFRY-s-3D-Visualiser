@@ -8,8 +8,8 @@ using Newtonsoft.Json;
 public class VehicleConfiguration : MonoBehaviour
 {
     public static VehicleConfiguration instance;
-    //private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
-    private string url = "https://localhost:7214/api/Machine/GetAllMachines";
+    private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
+    //private string url = "https://localhost:7214/api/Machine/GetAllMachines";
     String jsonString;
     public List<VehicleConfiguration.Vehicle> vehicles;
 
@@ -64,7 +64,6 @@ public class VehicleConfiguration : MonoBehaviour
             status = vehicles[i].status;
             vehicle[i].SetActive(true);
             vehicle[i].GetComponent<MetaData>().SetMetaData(machine_id, machine_external_id, machine_type, serial_number, status);
-            Debug.Log("Machine ID: " + machine_id + " Machine Type: " + machine_type + " Machine External ID: " + machine_external_id + " Serial Number: " + serial_number + " Status: " + status);
 
         }
 
@@ -114,7 +113,6 @@ public class VehicleConfiguration : MonoBehaviour
             }
             else
             {
-                //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
                 jsonString = webRequest.downloadHandler.text;
                 vehicles = JsonConvert.DeserializeObject<List<VehicleConfiguration.Vehicle>>(jsonString);
             }

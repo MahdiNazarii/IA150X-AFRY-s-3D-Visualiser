@@ -24,11 +24,6 @@ public class ButtonManager : MonoBehaviour
         QuickFix(length);
     }
 
-    private void SelectLevel(int idNum)
-    {
-        //Debug.Log("Switch to Vehicle " + idNum);
-
-    }
     private void QuickFix(int length)
     {
         for (int i = 0; i < length; i++)
