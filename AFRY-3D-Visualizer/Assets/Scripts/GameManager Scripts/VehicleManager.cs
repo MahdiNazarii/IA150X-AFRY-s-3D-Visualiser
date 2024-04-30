@@ -167,21 +167,42 @@ public class VehicleManager : MonoBehaviour
     
     private void SetVehicleDataEverySecond()
     {
+        
         if (index < points)
         {
             for (int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
             {
-                //VehicleConfiguration.instance.vehicles[i].startingPosition = combinedArray[i][index]; 
-                if (vehicle[i].GetComponent<MetaData>().GetId() == combinedArray[i][index][0])
-                {   
-                    vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(combinedArray[i][index][2], combinedArray[i][index][3], combinedArray[i][index][4], combinedArray[i][index][1]);
+                float id = combinedArray[i][index][0];
+                try
+                {
+         
+                    UpdateVehicleWithId(id);
+
+                }
+                catch(System.Collections.Generic.KeyNotFoundException e)
+                {
+                    Debug.LogError(e);
                 }
             }
             index++;
         }
 
     }
+    public void UpdateVehicleWithId(float id)
+    {
+        int length = VehicleConfiguration.instance.vehicles.Count;
+        for (int i = 0; i < length; i++)
+        {
+            if (vehicle[i].GetComponent<MetaData>().GetId().Equals((int)id))
+            {
+                vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(combinedArray[i][index][2], combinedArray[i][index][3], combinedArray[i][index][4], combinedArray[i][index][1]);
+                return;
+            }
+        }
+        throw new System.Collections.Generic.KeyNotFoundException("vehicle id was not found: ");
+    }
+
 }
-    
+
     
    
