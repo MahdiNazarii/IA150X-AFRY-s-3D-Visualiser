@@ -8,29 +8,20 @@ public class VehicleManager : MonoBehaviour
     int index = 0;
     [SerializeField] GameObject[] vehicle;
 
-//     // the vector containing {id, level, x,z, angle} which represent the data from MCS-Core
-    
-//     /*public struct McsCoreMatrix
-//     {
-//         public string[,] elements; // 4 rows, 5 columns a row: {id, level, xp, yp, angle}
+// <Connection to MCS-Core>
+///////////////////////////////////////////////
+///
+/// 
 
-//         public McsCoreMatrix{int rows, int columns}ƒ
-//         {
-//             elements = new string[rows, columns];
 
-//         }
 
-//         public void FillRow{int index, string id, string level, string xp, string yp, string angle}
-//         {
 
-//             elements[index][0] = id;
-//             elements[index][0] = id;
-//         }
-//     }*/
 
-//     //McsCoreMatrix[] data;
 
-    
+    int rows = 0;
+    int cols = 5;
+    float[,] MCSCoreData;
+    float[][][] combinedArray = new float[][][] {};
    float[][] v1 = new float[][]
    {
     new float[]{3, 0, 1.4f, 6.0f, 0.1f },
@@ -139,15 +130,60 @@ public class VehicleManager : MonoBehaviour
     };
     
 
-    float[][][] combinedArray = new float[][][] {};
+   
 
     void Start() {
+        // initialize the 2D array for the data from MCS-Core
+        rows = VehicleConfiguration.instance.vehicles.Count;
+        MCSCoreData = new float[rows, cols];
+
+        // fill the 2D array with the data from MCS-Core
+        fillMCSCoreArray();
+
         combinedArray = new float[][][] {v1, v2, v3, v4};
        
         InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
 
     }
+
+    void Update()
+    {
+     // set the vehicle data   
+    //  SetVehicleData();
+    }
     
+    // TODO: Implement the method that will fill the 2D array with the data from MCS-Core
+    private void fillMCSCoreArray()
+    {
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+               
+            }
+        }
+    }
+
+
+    private void SetVehicleData()
+    {
+       for(int i=0; i<VehicleConfiguration.instance.vehicles.Count; i++)
+        {
+            float id = MCSCoreData[i, 0];
+             try
+                {
+                    UpdateVehicleWithId(id);
+
+                }
+                catch(System.Collections.Generic.KeyNotFoundException e)
+                {
+                    Debug.LogError(e);
+                }
+        }
+    }
+
+
+// OBS: This method will be removed in the final version
     private void SetVehicleDataEverySecond()
     {
         if (index < points)
@@ -157,7 +193,6 @@ public class VehicleManager : MonoBehaviour
                 float id = combinedArray[i][index][0];
                 try
                 {
-         
                     UpdateVehicleWithId(id);
 
                 }
@@ -168,8 +203,9 @@ public class VehicleManager : MonoBehaviour
             }
             index++;
         }
-
     }
+
+
     public void UpdateVehicleWithId(float id)
     {
         int length = vehicle.Length;
@@ -184,7 +220,6 @@ public class VehicleManager : MonoBehaviour
         }
         throw new System.Collections.Generic.KeyNotFoundException("vehicle id was not found: ");
     }
-
 }
 
     
