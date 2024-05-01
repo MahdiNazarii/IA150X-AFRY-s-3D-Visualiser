@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5828888945918520415}
-  - component: {fileID: 191502861543797766}
   - component: {fileID: 2963110079659057588}
+  - component: {fileID: 8268547774509979163}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -33,7 +33,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &191502861543797766
+--- !u!114 &2963110079659057588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216796959305242315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe41956fb3a94a21b95116cce530c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicle: []
+--- !u!114 &8268547774509979163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,20 +74,24 @@ MonoBehaviour:
     machine_external_id: 
     serial_number: 0
     status: 0
-  vehicle: []
-  vehicleButtons: []
-  vehicleTags: []
+  - machine_id: 0
+    machine_type: 0
+    machine_external_id: 
+    serial_number: 0
+    status: 0
+  vehicle:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  vehicleButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  vehicleTags:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   activeVehicle: 0
---- !u!114 &2963110079659057588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4216796959305242315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe41956fb3a94a21b95116cce530c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vehicle: []

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00060913386, g: 0.00060913386, b: 0.00060913386, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -583,6 +583,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.027221885
       objectReference: {fileID: 0}
+    - target: {fileID: 8641223184373761879, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 7398222598499822982}
     m_RemovedComponents:
     - {fileID: 8619327840090961699, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
     m_RemovedGameObjects: []
@@ -914,6 +918,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000000001141367
       objectReference: {fileID: 0}
+    - target: {fileID: 8641223184373761879, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 828303693}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1293,6 +1301,54 @@ PrefabInstance:
       propertyPath: vehicleButtons.Array.data[3]
       value: 
       objectReference: {fileID: 1501255462}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicle.Array.data[0]
+      value: 
+      objectReference: {fileID: 2091614883}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicle.Array.data[1]
+      value: 
+      objectReference: {fileID: 1093296658}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicle.Array.data[2]
+      value: 
+      objectReference: {fileID: 1283470358}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicle.Array.data[3]
+      value: 
+      objectReference: {fileID: 1714325943}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleTags.Array.data[0]
+      value: 
+      objectReference: {fileID: 67552381}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleTags.Array.data[1]
+      value: 
+      objectReference: {fileID: 6930235244790694744}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleTags.Array.data[2]
+      value: 
+      objectReference: {fileID: 879421842}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleTags.Array.data[3]
+      value: 
+      objectReference: {fileID: 828303691}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1501255462}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 463912495}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 785234022}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleButtons.Array.data[3]
+      value: 
+      objectReference: {fileID: 1081697341}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1414,6 +1470,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.000089518515
       objectReference: {fileID: 0}
+    - target: {fileID: 8641223184373761879, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 879421844}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1857,7 +1917,12 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.008205178
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8641223184373761879, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 67552383}
+    m_RemovedComponents:
+    - {fileID: 2768625419267690583, guid: 6d6fb0eff8bd2bf4aa060a3d9e329738, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
