@@ -13,11 +13,6 @@ public class VehicleManager : MonoBehaviour
 ///
 /// 
 
-
-
-
-
-
     int rows = 0;
     int cols = 5;
     float[,] MCSCoreData;
@@ -130,8 +125,6 @@ public class VehicleManager : MonoBehaviour
     };
     
 
-   
-
     void Start() {
         // initialize the 2D array for the data from MCS-Core
         rows = VehicleConfiguration.instance.vehicles.Count;
@@ -218,7 +211,7 @@ public class VehicleManager : MonoBehaviour
                 return;
             }
         }
-        throw new System.Collections.Generic.KeyNotFoundException("vehicle id was not found: ");
+        throw new System.Collections.Generic.KeyNotFoundException("Vehicle id was not found: " + id);
     }
 }
 

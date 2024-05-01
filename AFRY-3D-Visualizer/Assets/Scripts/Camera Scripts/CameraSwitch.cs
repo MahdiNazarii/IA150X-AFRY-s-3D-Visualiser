@@ -13,8 +13,6 @@ public class CameraSwitch : MonoBehaviour
 
     private int current = 0;
 
-
-    // Update is called once per frame
     private void Update()
     {
         if(Input.GetKey(KeyCode.F))
@@ -28,7 +26,7 @@ public class CameraSwitch : MonoBehaviour
     {
         FlyingView.gameObject.SetActive(true);
         LockedVehicleView[current].gameObject.SetActive(false);
-        worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCameraF(this, "yo");
+        worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCameraF();
     }
 
 
@@ -36,7 +34,6 @@ public class CameraSwitch : MonoBehaviour
     public void OnClickSwitchToVehicle(int id)
     {
         VehicleConfiguration.instance.activeVehicle = id;
-      
         LockedVehicleView[current].gameObject.SetActive(false);
         LockedVehicleView[id].gameObject.SetActive(true);
         FlyingView.gameObject.SetActive(false);

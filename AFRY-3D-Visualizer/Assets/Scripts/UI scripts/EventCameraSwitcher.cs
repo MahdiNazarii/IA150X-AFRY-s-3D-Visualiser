@@ -8,23 +8,24 @@ public class EventCameraSwitcher : MonoBehaviour
     [SerializeField]
     CinemachineVirtualCamera[] allCameras;
     [SerializeField]
-    FloatingText[] allTexts;
+    FloatingTextTag[] allTexts;
 
     [SerializeField] CinemachineVirtualCamera flying;
 
-    public void UpdateWorldSpaceCanvasCamera(Component sender, object data)
+    public void UpdateWorldSpaceCanvasCamera()
     {
        
         this.gameObject.GetComponent<Canvas>().worldCamera = allCameras[VehicleConfiguration.instance.activeVehicle].GetComponent<Camera>();
         for(int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
         {
-           allTexts[i].SwitchCamera(this.gameObject.GetComponent<Canvas>().worldCamera);
+            allTexts[i].SwitchCamera(this.gameObject.GetComponent<Canvas>().worldCamera);
         }
       
     }
-    public void UpdateWorldSpaceCanvasCameraF(Component sender, object data)
+    public void UpdateWorldSpaceCanvasCameraF()
     {
         this.gameObject.GetComponent<Canvas>().worldCamera = flying.GetComponent<Camera>();
+        
         for (int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
         {
             allTexts[i].SwitchCamera(this.gameObject.GetComponent<Canvas>().worldCamera);

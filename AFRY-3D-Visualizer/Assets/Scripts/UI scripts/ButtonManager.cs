@@ -18,9 +18,10 @@ public class ButtonManager : MonoBehaviour
             vehicleButton[i].gameObject.SetActive(true);
             vehicleButton[i].GetComponent<Button>().onClick.RemoveAllListeners();
             vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(j - 1));
-            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(this, j-1));
+            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(/*this, j-1*/));
             j++;
         }
+        // QUICKFIX to BUG
         QuickFix(length);
     }
 
@@ -30,7 +31,6 @@ public class ButtonManager : MonoBehaviour
         {
             vehicleButton[i].GetComponent<Button>().onClick.Invoke();
         }
-        cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToFlyingView();
         cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToFlyingView();
     }
 }
