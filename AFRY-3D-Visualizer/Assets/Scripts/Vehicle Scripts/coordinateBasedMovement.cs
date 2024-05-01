@@ -6,7 +6,7 @@ using System.Collections;
 
 public class coordinateBasedMovement : MonoBehaviour
 {
-    //
+    //  
     public Vector3? targetPosition = null;
 
     float carWidth = 1.84f;
@@ -45,7 +45,7 @@ public class coordinateBasedMovement : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             // The rest of your code...
-            yPosition = hit.point.y;
+            yPosition = hit.point.y + 1.2f;
             //Debug.Log("Hit point L1: " + hit.point);
         }
 

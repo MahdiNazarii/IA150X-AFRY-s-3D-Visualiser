@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00060913386, g: 0.00060913386, b: 0.00060913386, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_Name
-      value: maningMachineJoined (2)
+      value: HM3
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_IsActive
@@ -470,6 +470,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7006067056948664598, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 828303692}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1286,7 +1290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_Name
-      value: maningMachineJoined (3)
+      value: HM4
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_IsActive
@@ -1340,6 +1344,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7006067056948664598, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 67552382}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1626,7 +1634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_Name
-      value: maningMachineJoined (1)
+      value: HM2
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_IsActive
@@ -1680,6 +1688,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7006067056948664598, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 879421843}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2162,7 +2174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_Name
-      value: maningMachineJoined
+      value: HM1
       objectReference: {fileID: 0}
     - target: {fileID: 2326559875703083844, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
       propertyPath: m_IsActive
@@ -2216,6 +2228,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7006067056948664598, guid: c404db0bbaf204b79833cb9f9dadb515, type: 3}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 7398222598499822982}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
