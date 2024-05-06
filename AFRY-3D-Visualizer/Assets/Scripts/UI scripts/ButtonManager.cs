@@ -21,16 +21,7 @@ public class ButtonManager : MonoBehaviour
             vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(/*this, j-1*/));
             j++;
         }
-        // QUICKFIX to BUG
-        QuickFix(length);
+       
     }
 
-    private void QuickFix(int length)
-    {
-        for (int i = 0; i < length; i++)
-        {
-            vehicleButton[i].GetComponent<Button>().onClick.Invoke();
-        }
-        cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToFlyingView();
-    }
 }

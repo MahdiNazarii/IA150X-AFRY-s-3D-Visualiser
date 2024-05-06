@@ -45,7 +45,7 @@ public class coordinateBasedMovement : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             // The rest of your code...
-            yPosition = hit.point.y + 1.2f;
+            yPosition = hit.point.y+ 0.5f;
             //Debug.Log("Hit point L1: " + hit.point);
         }
 

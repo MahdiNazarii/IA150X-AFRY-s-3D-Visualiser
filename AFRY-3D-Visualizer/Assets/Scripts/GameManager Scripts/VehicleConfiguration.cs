@@ -74,7 +74,7 @@ public class VehicleConfiguration : MonoBehaviour
         for(int i = 0; i < vehicles.Count; i++)
         {
             vehicleButtons[i].SetActive(true);
-            vehicleButtons[i].GetComponent<VehicleButton>().setVehicleText(vehicles[i].machine_external_id);
+            vehicleButtons[i].GetComponent<VehicleButton>().SetVehicleText(vehicles[i].machine_external_id);
         }
     }
     private void InitializeTags()

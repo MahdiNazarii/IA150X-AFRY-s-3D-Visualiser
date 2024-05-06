@@ -8,7 +8,7 @@ public class VehicleButton : MonoBehaviour
 {
     public TextMeshProUGUI vehicleText;
 
-    public void setVehicleText(string machineName)
+    public void SetVehicleText(string machineName)
     {
         vehicleText.text = machineName;
     }

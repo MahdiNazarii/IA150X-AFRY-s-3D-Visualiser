@@ -131,7 +131,7 @@ public class VehicleManager : MonoBehaviour
         MCSCoreData = new float[rows, cols];
 
         // fill the 2D array with the data from MCS-Core
-        fillMCSCoreArray();
+        FillMCSCoreArray();
 
         combinedArray = new float[][][] {v1, v2, v3, v4};
        
@@ -146,7 +146,7 @@ public class VehicleManager : MonoBehaviour
     }
     
     // TODO: Implement the method that will fill the 2D array with the data from MCS-Core
-    private void fillMCSCoreArray()
+    private void FillMCSCoreArray()
     {
         for (int i = 0; i < rows; i++)
         {

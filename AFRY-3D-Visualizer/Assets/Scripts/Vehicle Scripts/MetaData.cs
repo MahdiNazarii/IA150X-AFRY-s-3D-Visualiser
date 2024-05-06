@@ -29,10 +29,4 @@ public class MetaData : MonoBehaviour
         return machineName;
     }
 
-    public void setCurrentPosition(Vector3 position)
-    {
-        this.positionObject.x = position.x;
-        this.positionObject.y = position.y;
-        this.positionObject.z = position.z;
-    }
 }
