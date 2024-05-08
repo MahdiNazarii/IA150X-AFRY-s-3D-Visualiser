@@ -130,13 +130,13 @@ public class VehicleManager : MonoBehaviour
 
     void Start() {
         // initialize the 2D array for the data from MCS-Core
-        rows = VehicleConfiguration.instance.vehicles.Count;
-        MCSCoreData = new float[rows, cols];
+        // rows = VehicleConfiguration.instance.vehicles.Count;
+        // MCSCoreData = new float[rows, cols];
 
-        // fill the 2D array with the data from MCS-Core
-        FillMCSCoreArray();
+        // // fill the 2D array with the data from MCS-Core
+        // FillMCSCoreArray();
 
-        combinedArray = new float[][][] {v1, v2, v3, v4};
+       // combinedArray = new float[][][] {v1, v2, v3, v4};
        
         //InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
 
@@ -145,78 +145,81 @@ public class VehicleManager : MonoBehaviour
         // dRFConnection.ConnectToServer("10.40.109.105");
         FleetLiveServerConnection fleetLiveServerConnection = new FleetLiveServerConnection();
         fleetLiveServerConnection.Connect("10.40.109.105");
-
+        //fleetLiveServerConnection.Disconnect();
     }
 
-    void Update()
-    {
-     // set the vehicle data   
-    //  SetVehicleData();
-    }
+    // void Update()
+    // {
+    //  // set the vehicle data   
+    // //  SetVehicleData();
+    // }
     
-    // TODO: Implement the method that will fill the 2D array with the data from MCS-Core
-    private void FillMCSCoreArray()
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
+    // // TODO: Implement the method that will fill the 2D array with the data from MCS-Core
+    // private void FillMCSCoreArray()
+    // {
+    //     for (int i = 0; i < rows; i++)
+    //     {
+    //         for (int j = 0; j < cols; j++)
+    //         {
                
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
 
 
-    private void SetVehicleData()
-    {
-       for(int i=0; i<VehicleConfiguration.instance.vehicles.Count; i++)
-        {
-            float id = MCSCoreData[i, 0];
-             try
-                {
-                    UpdateVehicleWithId(id);
+    // private void SetVehicleData()
+    // {
+    //    for(int i=0; i<VehicleConfiguration.instance.vehicles.Count; i++)
+    //     {
+    //         float id = MCSCoreData[i, 0];
+    //          try
+    //             {
+    //                 UpdateVehicleWithId(id);
 
-                }
-                catch(System.Collections.Generic.KeyNotFoundException e)
-                {
-                    Debug.LogError(e);
-                }
-        }
-    }
+    //             }
+    //             catch(System.Collections.Generic.KeyNotFoundException e)
+    //             {
+    //                 Debug.LogError(e);
+    //             }
+    //     }
+    // }
 
 
 // OBS: This method will be removed in the final version
-    public void SetVehicleDataEverySecond()
-    {
-        if (index < points)
-        {
-            for (int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
-            {
-                float id = combinedArray[i][index][0];
-                try
-                {
-                    UpdateVehicleWithId(id);
+    // public void SetVehicleDataEverySecond()
+    // {
+    //     if (index < points)
+    //     {
+    //         for (int i = 0; i < VehicleConfiguration.instance.vehicles.Count; i++)
+    //         {
+    //             float id = combinedArray[i][index][0];
+    //             try
+    //             {
+    //                 UpdateVehicleWithId(id);
 
-                }
-                catch(System.Collections.Generic.KeyNotFoundException e)
-                {
-                    Debug.LogError(e);
-                }
-            }
-            index++;
-        }
-    }
+    //             }
+    //             catch(System.Collections.Generic.KeyNotFoundException e)
+    //             {
+    //                 Debug.LogError(e);
+    //             }
+    //         }
+    //         index++;
+    //     }
+    // }
 
 
-    public void UpdateVehicleWithId(float id)
+    public void UpdateVehicleWithId(float id, float x_pos, float y_pos, float angle, int level)
     {
         int length = vehicle.Length;
+        Debug.Log("Length:" + length);
         for (int i = 0; i < length; i++)
         {
             if (vehicle[i].GetComponent<MetaData>().GetId().Equals((int)id))
             {
                
-                vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(combinedArray[i][index][2], combinedArray[i][index][3], combinedArray[i][index][4], combinedArray[i][index][1]);
+                //vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(combinedArray[i][index][2], combinedArray[i][index][3], combinedArray[i][index][4], combinedArray[i][index][1]);
+                
+                vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(x_pos, y_pos, angle, level);
                 return;
             }
         }

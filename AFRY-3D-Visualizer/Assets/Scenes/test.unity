@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00060913386, g: 0.00060913386, b: 0.00060913386, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1035,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2963110079659057588, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicle.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2963110079659057588, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicle.Array.data[0]
@@ -1162,6 +1162,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1501255462}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicle.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicle.Array.data[0]
       value: 
       objectReference: {fileID: 934121265637587191}
@@ -1177,6 +1185,14 @@ PrefabInstance:
       propertyPath: vehicle.Array.data[3]
       value: 
       objectReference: {fileID: 1809381287}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleButtons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleTags.Array.data[0]
       value: 
@@ -1215,13 +1231,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4216796959305242315, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1595915190}
-    - targetCorrespondingSourceObject: {fileID: 4216796959305242315, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1595915192}
-    - targetCorrespondingSourceObject: {fileID: 4216796959305242315, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1595915191}
+    - targetCorrespondingSourceObject: {fileID: 4216796959305242315, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595915197}
+    - targetCorrespondingSourceObject: {fileID: 4216796959305242315, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595915196}
   m_SourcePrefab: {fileID: 100100000, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
 --- !u!1 &1501255462 stripped
 GameObject:
@@ -1233,18 +1249,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4216796959305242315, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
   m_PrefabInstance: {fileID: 1429992720}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1595915190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595915186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640dbc64a334f43b79d58f3bd5be7d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1595915191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,7 +1261,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972a68f7bc6047d3a96cb3a20276cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1595915192
+--- !u!114 &1595915196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595915186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640dbc64a334f43b79d58f3bd5be7d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1595915197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -17,5 +17,7 @@ public class MachinePositionUpdate : EventArgs
     public double Speed{get;  set;}
     public int Level{get; set;}
 
+    //
+
     
 }

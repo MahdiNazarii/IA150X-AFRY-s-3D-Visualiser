@@ -99,6 +99,10 @@ public class VehicleConfiguration : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void Test(){
+        Debug.Log("Test!!!!");
+    }
+
     IEnumerator GetData()
     {
         using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
@@ -121,7 +125,8 @@ public class VehicleConfiguration : MonoBehaviour
         InitializeComponents();
 
         // call setVehicleDataEverySecond 
-        GetComponent<VehicleManager>().InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
+        //GetComponent<VehicleManager>().InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
+        
        
         yield return null;
     }
