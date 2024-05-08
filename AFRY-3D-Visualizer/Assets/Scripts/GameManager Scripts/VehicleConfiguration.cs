@@ -33,8 +33,7 @@ public class VehicleConfiguration : MonoBehaviour
     private void Awake()
     {
         CreateSingleton();
-        StartCoroutine(GetData());
-        
+        StartCoroutine(GetData());        
     }
 
      private void InitializeComponents()
@@ -121,6 +120,9 @@ public class VehicleConfiguration : MonoBehaviour
         // Initialize the vehicles, buttons and tags
         InitializeComponents();
 
+        // call setVehicleDataEverySecond 
+        GetComponent<VehicleManager>().InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
+       
         yield return null;
     }
 }

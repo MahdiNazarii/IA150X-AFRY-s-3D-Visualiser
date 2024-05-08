@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using MCSData.Communication;
+using MCSData.FleetLive.Communication;
+using Microsoft.Extensions.Logging;
 using UnityEngine;
 
 public class VehicleManager : MonoBehaviour
@@ -135,7 +138,13 @@ public class VehicleManager : MonoBehaviour
 
         combinedArray = new float[][][] {v1, v2, v3, v4};
        
-        InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
+        //InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
+
+        // Test to connect to the server
+        // DRFConnection dRFConnection = new DRFConnection();
+        // dRFConnection.ConnectToServer("10.40.109.105");
+        FleetLiveServerConnection fleetLiveServerConnection = new FleetLiveServerConnection();
+        fleetLiveServerConnection.Connect("10.40.109.105");
 
     }
 
@@ -177,7 +186,7 @@ public class VehicleManager : MonoBehaviour
 
 
 // OBS: This method will be removed in the final version
-    private void SetVehicleDataEverySecond()
+    public void SetVehicleDataEverySecond()
     {
         if (index < points)
         {
