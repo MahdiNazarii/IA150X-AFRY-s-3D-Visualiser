@@ -8,6 +8,7 @@ public class VehicleManager : MonoBehaviour
 
     private FleetLiveServerConnection fleetLiveServerConnection;
 
+
     private int points=20;
     int index = 0;
     [SerializeField] GameObject[] vehicle;
@@ -146,7 +147,9 @@ public class VehicleManager : MonoBehaviour
         // dRFConnection.ConnectToServer("10.40.109.105");
         // fleetLiveServerConnection = gameObject.AddComponent<FleetLiveServerConnection>();
         // fleetLiveServerConnection.Connect("10.40.109.105");
+
         //fleetLiveServerConnection.Disconnect();
+
     }
 
     void Update()

@@ -9,12 +9,15 @@ public class ButtonManager : MonoBehaviour
     public Canvas worldSpaceCanvas;
     public GameObject cameraManager;
 
-    private void Start()
+    public void InitializeButtons()
     {
-        int length = VehicleConfiguration.instance.vehicles.Count;
+        //VehicleConfiguration.Vehicle[] vehicles = VehicleConfiguration.instance.vehicles;
+        
+    int length = VehicleConfiguration.instance.vehicles.Count;
         for(int i = 0; i < length; i++)
         {
             int j = i;
+            vehicleButton[i].GetComponent<VehicleButton>().SetVehicleText(VehicleConfiguration.instance.vehicles[i].machine_external_id);
             vehicleButton[i].gameObject.SetActive(true);
             vehicleButton[i].GetComponent<Button>().onClick.RemoveAllListeners();
             vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(j - 1));
