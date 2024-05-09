@@ -4,7 +4,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Collections;
 
-public class coordinateBasedMovement : MonoBehaviour
+public class CoordinateBasedMovement : MonoBehaviour
 {
     //  
     public Vector3? targetPosition = null;

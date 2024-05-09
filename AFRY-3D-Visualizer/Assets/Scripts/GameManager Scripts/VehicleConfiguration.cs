@@ -99,9 +99,7 @@ public class VehicleConfiguration : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void Test(){
-        Debug.Log("Test!!!!");
-    }
+    
 
     IEnumerator GetData()
     {

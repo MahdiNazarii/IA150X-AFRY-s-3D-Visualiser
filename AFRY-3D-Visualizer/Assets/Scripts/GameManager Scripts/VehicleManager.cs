@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using MCSData.Communication;
-using MCSData.FleetLive.Communication;
 using Microsoft.Extensions.Logging;
 using UnityEngine;
 
 public class VehicleManager : MonoBehaviour
 {
+
+    private FleetLiveServerConnection fleetLiveServerConnection;
+
     private int points=20;
     int index = 0;
     [SerializeField] GameObject[] vehicle;
@@ -143,46 +144,33 @@ public class VehicleManager : MonoBehaviour
         // Test to connect to the server
         // DRFConnection dRFConnection = new DRFConnection();
         // dRFConnection.ConnectToServer("10.40.109.105");
-        FleetLiveServerConnection fleetLiveServerConnection = new FleetLiveServerConnection();
-        fleetLiveServerConnection.Connect("10.40.109.105");
+        // fleetLiveServerConnection = gameObject.AddComponent<FleetLiveServerConnection>();
+        // fleetLiveServerConnection.Connect("10.40.109.105");
         //fleetLiveServerConnection.Disconnect();
     }
 
-    // void Update()
-    // {
-    //  // set the vehicle data   
-    // //  SetVehicleData();
-    // }
-    
-    // // TODO: Implement the method that will fill the 2D array with the data from MCS-Core
-    // private void FillMCSCoreArray()
-    // {
-    //     for (int i = 0; i < rows; i++)
-    //     {
-    //         for (int j = 0; j < cols; j++)
-    //         {
+    void Update()
+    {
+        if(fleetLiveServerConnection.newDataFlag)
+        {
+            foreach (KeyValuePair<float, float[]> entry in fleetLiveServerConnection.HashMap)
+            {
+                float id = entry.Key;
+                float[] values = entry.Value;
+
+                float x_pos = values[0];
+                float y_pos = values[1];
+                float angle = values[2];
+                int level = (int)values[3];
+                UpdateVehicleWithId((int)id, x_pos, y_pos, angle, level);
                
-    //         }
-    //     }
-    // }
+            }
+            fleetLiveServerConnection.newDataFlag = false;
+        }
+    }
+    
 
-
-    // private void SetVehicleData()
-    // {
-    //    for(int i=0; i<VehicleConfiguration.instance.vehicles.Count; i++)
-    //     {
-    //         float id = MCSCoreData[i, 0];
-    //          try
-    //             {
-    //                 UpdateVehicleWithId(id);
-
-    //             }
-    //             catch(System.Collections.Generic.KeyNotFoundException e)
-    //             {
-    //                 Debug.LogError(e);
-    //             }
-    //     }
-    // }
+   
 
 
 // OBS: This method will be removed in the final version
@@ -208,22 +196,36 @@ public class VehicleManager : MonoBehaviour
     // }
 
 
-    public void UpdateVehicleWithId(float id, float x_pos, float y_pos, float angle, int level)
+
+    // public void UpdateVehicleWithId(int id, float x_pos, float y_pos, float angle, int level)
+    // {
+    //     int length = vehicle.Length;
+    //     for (int i = 0; i < length; i++)
+    //     {
+    //         if (vehicle[i].GetComponent<MetaData>().GetId().Equals((int)id))
+    //         {
+               
+    //             //vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(combinedArray[i][index][2], combinedArray[i][index][3], combinedArray[i][index][4], combinedArray[i][index][1]);
+                
+    //             vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(x_pos, y_pos, angle, level);
+    //             return;
+    //         }
+    //     }
+    //     throw new System.Collections.Generic.KeyNotFoundException("Vehicle id was not found: " + id);
+    // }
+
+    public void UpdateVehicleWithId(int id, float x_pos, float y_pos, float angle, int level)
     {
         int length = vehicle.Length;
-        Debug.Log("Length:" + length);
         for (int i = 0; i < length; i++)
         {
-            if (vehicle[i].GetComponent<MetaData>().GetId().Equals((int)id))
-            {
-               
-                //vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(combinedArray[i][index][2], combinedArray[i][index][3], combinedArray[i][index][4], combinedArray[i][index][1]);
-                
-                vehicle[i].GetComponent<coordinateBasedMovement>().MovementSystem(x_pos, y_pos, angle, level);
+            if (vehicle[i].GetComponent<MetaData>().GetId().Equals(id))
+            {                
+                vehicle[i].GetComponent<CoordinateBasedMovement>().MovementSystem(x_pos, y_pos, angle, level);
                 return;
             }
         }
-        throw new System.Collections.Generic.KeyNotFoundException("Vehicle id was not found: " + id);
+        throw new System.Collections.Generic.KeyNotFoundException("Vehicle id was not found: ");
     }
 }
 

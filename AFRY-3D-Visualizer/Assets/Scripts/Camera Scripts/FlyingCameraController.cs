@@ -1,12 +1,4 @@
-﻿//===========================================================================//
-//                       FreeFlyCamera (Version 1.2)                         //
-//                        (c) 2019 Sergey Stafeyev                           //
-//===========================================================================//
-//                       FreeFlyCinemachineCamera                            //
-//                        (c) Edited by Mostafa Aziz Zuher & Mahdi Nazari    //
-//===========================================================================//
-
-
+﻿
 using UnityEngine;
 
 public class FlyingCameraController : MonoBehaviour
