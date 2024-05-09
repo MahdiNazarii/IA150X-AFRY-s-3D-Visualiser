@@ -154,22 +154,22 @@ public class VehicleManager : MonoBehaviour
 
     void Update()
     {
-        if(fleetLiveServerConnection.newDataFlag)
-        {
-            foreach (KeyValuePair<float, float[]> entry in fleetLiveServerConnection.HashMap)
-            {
-                float id = entry.Key;
-                float[] values = entry.Value;
+        // if(fleetLiveServerConnection.newDataFlag)
+        // {
+        //     foreach (KeyValuePair<float, float[]> entry in fleetLiveServerConnection.HashMap)
+        //     {
+        //         float id = entry.Key;
+        //         float[] values = entry.Value;
 
-                float x_pos = values[0];
-                float y_pos = values[1];
-                float angle = values[2];
-                int level = (int)values[3];
-                UpdateVehicleWithId((int)id, x_pos, y_pos, angle, level);
+        //         float x_pos = values[0];
+        //         float y_pos = values[1];
+        //         float angle = values[2];
+        //         int level = (int)values[3];
+        //         UpdateVehicleWithId((int)id, x_pos, y_pos, angle, level);
                
-            }
-            fleetLiveServerConnection.newDataFlag = false;
-        }
+        //     }
+        //     fleetLiveServerConnection.newDataFlag = false;
+        // }
     }
     
 

@@ -404,6 +404,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9107195503585234640, guid: 6fc9051500b6edb408781f0254b7cde6, type: 3}
   m_PrefabInstance: {fileID: 1388484834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &686048127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4899538117949013566, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
+  m_PrefabInstance: {fileID: 1880867095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &785234022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7401015955828097950, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
@@ -1162,6 +1167,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1501255462}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: buttonUI
+      value: 
+      objectReference: {fileID: 686048127}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicle.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1285,6 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4935a0688bca4768b67951e2f505ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newDataFlag: 0
 --- !u!1001 &1632245766
 PrefabInstance:
   m_ObjectHideFlags: 0

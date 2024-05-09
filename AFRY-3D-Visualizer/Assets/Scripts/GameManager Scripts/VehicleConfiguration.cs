@@ -10,8 +10,8 @@ using UnityEngine.UI;
 public class VehicleConfiguration : MonoBehaviour
 {
     public static VehicleConfiguration instance;
-    //private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
-    private string url = "https://localhost:7214/api/Machine/GetAllMachines";
+    private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
+    //private string url = "https://localhost:7214/api/Machine/GetAllMachines";
     String jsonString;
     public List<VehicleConfiguration.Vehicle> vehicles;
 
@@ -92,7 +92,9 @@ public class VehicleConfiguration : MonoBehaviour
         { 
             vehicleTags[i].SetActive(true);
             vehicleTags[i].GetComponent<FloatingTextTag>().SetTagText(vehicles[i].machine_external_id);
+            vehicleTags[i].GetComponent<FloatingTextTag>().FollowParentVehicle(); 
         }
+
     }
 
     void CreateSingleton()
