@@ -9,10 +9,9 @@ using UnityEngine;
 
 namespace MCSData.Communication
 {
-   
-    public class DRFConnection : MonoBehaviour
+    public class DRFConnection : ScriptableObject
     {
-
+        //
        // private readonly ILogger<DRFConnection> logger;
         public bool ServerConnected { get; private set; }
         public string ServerName { get; private set; }

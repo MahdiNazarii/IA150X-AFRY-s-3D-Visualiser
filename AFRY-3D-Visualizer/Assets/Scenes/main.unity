@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00060913386, g: 0.00060913386, b: 0.00060913386, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -652,6 +652,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 52.888, y: -103.996, z: -79.401}
+--- !u!1 &1152645724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4899538117949013566, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
+  m_PrefabInstance: {fileID: 1880867095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1236730743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1162,6 +1167,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1501255462}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: buttonUI
+      value: 
+      objectReference: {fileID: 1152645724}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: cameraManager
+      value: 
+      objectReference: {fileID: 671459443}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: worldSpaceCanvas
+      value: 
+      objectReference: {fileID: 6407300091282808516}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicles.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicle.Array.data[0]
       value: 
       objectReference: {fileID: 934121265637587191}
@@ -1180,35 +1201,35 @@ PrefabInstance:
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleTags.Array.data[0]
       value: 
-      objectReference: {fileID: 67552381}
+      objectReference: {fileID: 6930235244790694744}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleTags.Array.data[1]
       value: 
-      objectReference: {fileID: 6930235244790694744}
+      objectReference: {fileID: 879421842}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleTags.Array.data[2]
       value: 
-      objectReference: {fileID: 879421842}
+      objectReference: {fileID: 828303691}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleTags.Array.data[3]
       value: 
-      objectReference: {fileID: 828303691}
+      objectReference: {fileID: 67552381}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleButtons.Array.data[0]
       value: 
-      objectReference: {fileID: 1501255462}
+      objectReference: {fileID: 463912495}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleButtons.Array.data[1]
       value: 
-      objectReference: {fileID: 463912495}
+      objectReference: {fileID: 785234022}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleButtons.Array.data[2]
       value: 
-      objectReference: {fileID: 785234022}
+      objectReference: {fileID: 1081697341}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleButtons.Array.data[3]
       value: 
-      objectReference: {fileID: 1081697341}
+      objectReference: {fileID: 1501255462}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1390,6 +1411,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1991124308}
     m_Modifications:
+    - target: {fileID: 34928593460723259, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 34928593460723259, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
       propertyPath: cameraManager
       value: 
@@ -2364,6 +2389,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa3de2fa9ead77945857a987a6beef26, type: 3}
+--- !u!1 &6407300091282808516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6870880137509661818, guid: aa3de2fa9ead77945857a987a6beef26, type: 3}
+  m_PrefabInstance: {fileID: 6407300091282808515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6471251514141883516
 MonoBehaviour:
   m_ObjectHideFlags: 0

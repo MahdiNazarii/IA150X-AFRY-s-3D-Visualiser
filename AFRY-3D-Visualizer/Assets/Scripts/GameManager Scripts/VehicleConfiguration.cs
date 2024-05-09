@@ -4,17 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
+using TMPro;
+using UnityEngine.UI;
 
 public class VehicleConfiguration : MonoBehaviour
 {
     public static VehicleConfiguration instance;
-    private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
-    //private string url = "https://localhost:7214/api/Machine/GetAllMachines";
+    //private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
+    private string url = "https://localhost:7214/api/Machine/GetAllMachines";
     String jsonString;
     public List<VehicleConfiguration.Vehicle> vehicles;
 
+    [SerializeField] GameObject buttonUI;
+    //[SerializeField] GameObject cameraManager;
+    //[SerializeField] GameObject worldSpaceCanvas;
+
     [SerializeField] GameObject[] vehicle;
-    [SerializeField] GameObject[] vehicleButtons;
+    //[SerializeField] GameObject[] vehicleButtons;
     [SerializeField] GameObject[] vehicleTags;
     public int activeVehicle = 0;
 
@@ -39,7 +45,8 @@ public class VehicleConfiguration : MonoBehaviour
      private void InitializeComponents()
     {
         InitializeVehicles();
-        InitializeButtons();
+        buttonUI.GetComponent<ButtonManager>().InitializeButtons();
+        //InitializeButtons();
         InitializeTags();
     }
 
@@ -68,14 +75,17 @@ public class VehicleConfiguration : MonoBehaviour
 
         
     }
-    private void InitializeButtons()
+    /*private void InitializeButtons()
     {
+        GameObject cameraManager = vehicleButtons[0].GetComponentInParent<RectTransform>().GetComponentInParent<Canvas>
         for(int i = 0; i < vehicles.Count; i++)
         {
             vehicleButtons[i].SetActive(true);
             vehicleButtons[i].GetComponent<VehicleButton>().SetVehicleText(vehicles[i].machine_external_id);
+            vehicleButtons[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(i+1));
+            vehicleButtons[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(/*this, j-1));
         }
-    }
+    }*/
     private void InitializeTags()
     {
         for (int i = 0; i < vehicles.Count; i++)

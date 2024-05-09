@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class VehicleManager : MonoBehaviour
 {
+    FleetLiveServerConnection serverConnection;
+
     private int points=20;
     int index = 0;
     [SerializeField] GameObject[] vehicle;
@@ -143,9 +145,15 @@ public class VehicleManager : MonoBehaviour
         // Test to connect to the server
         // DRFConnection dRFConnection = new DRFConnection();
         // dRFConnection.ConnectToServer("10.40.109.105");
+<<<<<<< Updated upstream
         FleetLiveServerConnection fleetLiveServerConnection = new FleetLiveServerConnection();
         fleetLiveServerConnection.Connect("10.40.109.105");
         //fleetLiveServerConnection.Disconnect();
+=======
+        //serverConnection = new FleetLiveServerConnection();
+        //serverConnection.Connect("10.40.109.105");
+
+>>>>>>> Stashed changes
     }
 
     // void Update()
