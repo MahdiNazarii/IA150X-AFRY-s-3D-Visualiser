@@ -7,8 +7,11 @@ using DynamicRuntimeFramework.IPC;
 using Microsoft.Extensions.Logging;
 using UnityEngine;
 
-public class DRFConnection : MonoBehaviour
+namespace MCSData.Communication
 {
+
+    public class DRFConnection
+    {
 
     public bool ServerConnected { get; private set; }
     public string ServerName { get; private set; }
@@ -159,7 +162,7 @@ public class DRFConnection : MonoBehaviour
         {
 
             //logger?.LogError("Unable to call DRF procedure: '" + procedureToCall + "'", e);
-            //Debug.Log("Unable to call DRF procedure: '" + procedureToCall + "'", e);
+            Debug.Log("Unable to call DRF procedure: '" + procedureToCall + "'" + e);
             throw;
         }
     }
@@ -188,6 +191,7 @@ public class DRFConnection : MonoBehaviour
 
 
             // logger?.LogDebug("Calling DRF procedure: " + procedureToCall);
+            Debug.Log("Calling DRF procedure: " + procedureToCall);
             //call the connected G2 server
             return m_gateWay.CallAsync<TReturn>(procedureToCall, Arg4G2);
         }
@@ -222,6 +226,7 @@ public class DRFConnection : MonoBehaviour
     {
         if (isDisposed) throw new ObjectDisposedException("DRFConnection");
         //logger?.LogInformation("Disconnecting from DRF");
+        Debug.Log("Disconnecting from DRF");
         m_gateWay.Close();
 
     }
@@ -264,5 +269,6 @@ public class DRFConnection : MonoBehaviour
                 return Method.Invoke(_instance, args);
             }
         }
+    }
     }
 }

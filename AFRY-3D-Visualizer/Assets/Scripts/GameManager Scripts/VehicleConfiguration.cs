@@ -12,6 +12,8 @@ public class VehicleConfiguration : MonoBehaviour
     public static VehicleConfiguration instance;
     private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
     //private string url = "https://localhost:7214/api/Machine/GetAllMachines";
+
+   
     String jsonString;
     public List<VehicleConfiguration.Vehicle> vehicles;
 
@@ -59,8 +61,6 @@ public class VehicleConfiguration : MonoBehaviour
         int status;
 
         
-                
-
         for (int i = 0; i <  vehicles.Count; i++)
         {
             machine_id = vehicles[i].machine_id;
@@ -75,17 +75,7 @@ public class VehicleConfiguration : MonoBehaviour
 
         
     }
-    /*private void InitializeButtons()
-    {
-        GameObject cameraManager = vehicleButtons[0].GetComponentInParent<RectTransform>().GetComponentInParent<Canvas>
-        for(int i = 0; i < vehicles.Count; i++)
-        {
-            vehicleButtons[i].SetActive(true);
-            vehicleButtons[i].GetComponent<VehicleButton>().SetVehicleText(vehicles[i].machine_external_id);
-            vehicleButtons[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(i+1));
-            vehicleButtons[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(/*this, j-1));
-        }
-    }*/
+    
     private void InitializeTags()
     {
         for (int i = 0; i < vehicles.Count; i++)
@@ -133,9 +123,6 @@ public class VehicleConfiguration : MonoBehaviour
 
         // Initialize the vehicles, buttons and tags
         InitializeComponents();
-
-        // call setVehicleDataEverySecond 
-        //GetComponent<VehicleManager>().InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
         
        
         yield return null;

@@ -66,12 +66,8 @@ MonoBehaviour:
     machine_external_id: 
     serial_number: 0
     status: 0
+  buttonUI: {fileID: 0}
   vehicle:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  vehicleButtons:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
