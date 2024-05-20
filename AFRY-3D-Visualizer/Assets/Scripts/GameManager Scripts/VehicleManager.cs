@@ -35,7 +35,7 @@ public class VehicleManager : MonoBehaviour
 
                 float x_pos = values[0];
                 float y_pos = values[1];
-                float angle = values[2];
+                float angle = -values[2] + Mathf.PI/2;
                 int level = (int)values[3];
                 UpdateVehicleWithId((int)id, x_pos, y_pos, angle, level);
                

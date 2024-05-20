@@ -20,7 +20,7 @@ public class CoordinateBasedMovement : MonoBehaviour
     public void MovementSystem(float x,float z, float angle, float lev)
     {
         level = lev;
-        MoveObjectToPosition(x, z, -angle+Mathf.PI/2);
+        MoveObjectToPosition(x, z, angle);
         SetOrientation();
         // move the corresponding tag of the HM
         floatingText.GetComponent<FloatingTextTag>().FollowParentVehicle(); //shoulld not be here
