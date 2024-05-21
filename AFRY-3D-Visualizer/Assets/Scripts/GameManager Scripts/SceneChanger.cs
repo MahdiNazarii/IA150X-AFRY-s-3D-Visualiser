@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public void ChangeScene()
+    public void ChangeSceneToMain()
     {
         SceneManager.LoadScene("main");
+    }
+    public void ChangeSceneToTest()
+    {
+        SceneManager.LoadScene("test");
     }
 
 }

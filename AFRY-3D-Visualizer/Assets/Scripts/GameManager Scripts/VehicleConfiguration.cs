@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class VehicleConfiguration : MonoBehaviour
 {
+    
     public static VehicleConfiguration instance;
     //private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
     private string url = "https://localhost:7214/api/Machine/GetAllMachines";
@@ -25,6 +26,7 @@ public class VehicleConfiguration : MonoBehaviour
     //[SerializeField] GameObject[] vehicleButtons;
     [SerializeField] GameObject[] vehicleTags;
     public int activeVehicle = 0;
+    [SerializeField] private bool isTest;
 
 
     [System.Serializable]
@@ -36,12 +38,52 @@ public class VehicleConfiguration : MonoBehaviour
         public int serial_number;
         public int status;
 
+        public Vehicle(int id, int type, string name, int serialnumber, int status)
+        {
+            machine_id = id;
+            machine_type = type;
+            machine_external_id = name;
+            serial_number = serialnumber;
+            this.status = status;
+        }
+
     }
 
     private void Awake()
     {
         CreateSingleton();
-        StartCoroutine(GetData());        
+        if (!isTest)
+        {
+            StartCoroutine(GetData());
+        }
+        else
+        {
+            TestInit();
+
+        }
+    }
+
+    public void TestInit()
+    {
+        //vehicles = new Vehicle[2];
+        vehicles[0] = new Vehicle(3, 1, "Vehicle 1", 1, 1);
+        vehicles[1] = new Vehicle(5, 1, "Vehicle 2", 1, 3);
+
+        vehicle[0].SetActive(true);
+        vehicle[1].SetActive(true);
+        vehicle[0].GetComponent<MetaData>().SetMetaData(3, "Vehicle 1", 12, 1, 1);
+        vehicle[1].GetComponent<MetaData>().SetMetaData(5, "Vehicle 2", 12, 1, 3);
+
+        buttonUI.GetComponent<ButtonManager>().InitializeButtons();
+
+
+        vehicleTags[0].SetActive(true);
+        vehicleTags[0].GetComponent<FloatingTextTag>().SetTagText("Vehicle 1");
+        vehicleTags[0].GetComponent<FloatingTextTag>().FollowParentVehicle();
+        vehicleTags[1].SetActive(true);
+        vehicleTags[1].GetComponent<FloatingTextTag>().SetTagText("Vehicle 2");
+        vehicleTags[1].GetComponent<FloatingTextTag>().FollowParentVehicle();
+
     }
 
      private void InitializeComponents()
