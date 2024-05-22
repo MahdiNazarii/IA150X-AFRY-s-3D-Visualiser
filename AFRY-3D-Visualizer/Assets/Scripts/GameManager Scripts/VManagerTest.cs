@@ -297,32 +297,12 @@ new float[]{5, 1, 37.70f, 140.60f, 0.640f},
         rows = VehicleConfiguration.instance.vehicles.Count;
         MCSCoreData = new float[rows, cols];
 
-        // fill the 2D array with the data from MCS-Core
-        FillMCSCoreArray();
-
         combinedArray = new float[][][] { v1, v2, v3, v4 };
 
         InvokeRepeating("SetVehicleDataEverySecond", 0, 1);
 
     }
 
-    void Update()
-    {
-        // set the vehicle data   
-        //  SetVehicleData();
-    }
-
-    // TODO: Implement the method that will fill the 2D array with the data from MCS-Core
-    private void FillMCSCoreArray()
-    {
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-
-            }
-        }
-    }
 
 
     private void SetVehicleData()
