@@ -20,7 +20,7 @@ public class ButtonManager : MonoBehaviour
             vehicleButton[i].GetComponent<VehicleButton>().SetVehicleText(VehicleConfiguration.instance.vehicles[i].machine_external_id);
             vehicleButton[i].gameObject.SetActive(true);
             vehicleButton[i].GetComponent<Button>().onClick.RemoveAllListeners();
-            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(j - 1));
+            vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(j-1));
             vehicleButton[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(/*this, j-1*/));
             j++;
         }
@@ -28,3 +28,4 @@ public class ButtonManager : MonoBehaviour
     }
 
 }
+///Possibly removable

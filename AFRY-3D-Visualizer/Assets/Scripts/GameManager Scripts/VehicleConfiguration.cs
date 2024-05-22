@@ -18,12 +18,12 @@ public class VehicleConfiguration : MonoBehaviour
     String jsonString;
     public List<VehicleConfiguration.Vehicle> vehicles;
 
-    [SerializeField] GameObject buttonUI;
-    //[SerializeField] GameObject cameraManager;
-    //[SerializeField] GameObject worldSpaceCanvas;
+    //[SerializeField] GameObject buttonUI;
+    [SerializeField] GameObject cameraManager;
+    [SerializeField] GameObject worldSpaceCanvas;
 
     [SerializeField] GameObject[] vehicle;
-    //[SerializeField] GameObject[] vehicleButtons;
+    [SerializeField] GameObject[] vehicleButtons;
     [SerializeField] GameObject[] vehicleTags;
     public int activeVehicle = 0;
     [SerializeField] private bool isTest;
@@ -47,6 +47,12 @@ public class VehicleConfiguration : MonoBehaviour
             this.status = status;
         }
 
+        public string StructFieldsString()
+        {
+            return "machine_id | machine_type | machine_external_id | serial_number | status";
+
+        }
+
     }
 
     private void Awake()
@@ -65,7 +71,8 @@ public class VehicleConfiguration : MonoBehaviour
 
     public void TestInit()
     {
-        //vehicles = new Vehicle[2];
+        
+        //vehicles
         vehicles[0] = new Vehicle(3, 1, "Vehicle 1", 1, 1);
         vehicles[1] = new Vehicle(5, 1, "Vehicle 2", 1, 3);
 
@@ -74,9 +81,19 @@ public class VehicleConfiguration : MonoBehaviour
         vehicle[0].GetComponent<MetaData>().SetMetaData(3, "Vehicle 1", 12, 1, 1);
         vehicle[1].GetComponent<MetaData>().SetMetaData(5, "Vehicle 2", 12, 1, 3);
 
-        buttonUI.GetComponent<ButtonManager>().InitializeButtons();
+        //buttons
+        vehicleButtons[0].GetComponent<VehicleButton>().SetVehicleText(vehicles[0].machine_external_id);
+        vehicleButtons[0].gameObject.SetActive(true);
+        //vehicleButtons[0].GetComponent<Button>().onClick.RemoveAllListeners();
+        vehicleButtons[0].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(0));
+        vehicleButtons[0].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(/*this, j-1*/));
 
-
+        vehicleButtons[1].GetComponent<VehicleButton>().SetVehicleText(vehicles[1].machine_external_id);
+        vehicleButtons[1].gameObject.SetActive(true);
+        //vehicleButtons[1].GetComponent<Button>().onClick.RemoveAllListeners();
+        vehicleButtons[1].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(1));
+        vehicleButtons[1].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera(/*this, j-1*/));
+        //tags
         vehicleTags[0].SetActive(true);
         vehicleTags[0].GetComponent<FloatingTextTag>().SetTagText("Vehicle 1");
         vehicleTags[0].GetComponent<FloatingTextTag>().FollowParentVehicle();
@@ -86,15 +103,9 @@ public class VehicleConfiguration : MonoBehaviour
 
     }
 
-     private void InitializeComponents()
-    {
-        InitializeVehicles();
-        buttonUI.GetComponent<ButtonManager>().InitializeButtons();
-        //InitializeButtons();
-        InitializeTags();
-    }
 
-     private void InitializeVehicles()
+
+     private void InitializeComponents() 
     {
         int machine_id;
         int machine_type;
@@ -110,12 +121,25 @@ public class VehicleConfiguration : MonoBehaviour
             machine_external_id = vehicles[i].machine_external_id;
             serial_number = vehicles[i].serial_number;
             status = vehicles[i].status;
+
+            // machines
             vehicle[i].SetActive(true);
             vehicle[i].GetComponent<MetaData>().SetMetaData(machine_id, machine_external_id, machine_type, serial_number, status);
+            
+            // tags
+            vehicleTags[i].SetActive(true);
+            vehicleTags[i].GetComponent<FloatingTextTag>().SetTagText(machine_external_id);
+            vehicleTags[i].GetComponent<FloatingTextTag>().FollowParentVehicle();
 
+            //buttons
+            int j = i;
+            vehicleButtons[i].GetComponent<VehicleButton>().SetVehicleText(machine_external_id);
+            vehicleButtons[i].gameObject.SetActive(true);
+            vehicleButtons[i].GetComponent<Button>().onClick.RemoveAllListeners();
+            vehicleButtons[i].GetComponent<Button>().onClick.AddListener(() => cameraManager.GetComponent<CameraSwitch>().OnClickSwitchToVehicle(j - 1));
+            vehicleButtons[i].GetComponent<Button>().onClick.AddListener(() => worldSpaceCanvas.GetComponent<EventCameraSwitcher>().UpdateWorldSpaceCanvasCamera());
+            j++;
         }
-
-        
     }
     
     private void InitializeTags()
@@ -159,7 +183,16 @@ public class VehicleConfiguration : MonoBehaviour
             else
             {
                 jsonString = webRequest.downloadHandler.text;
-                vehicles = JsonConvert.DeserializeObject<List<VehicleConfiguration.Vehicle>>(jsonString);
+                try
+                {
+                    vehicles = JsonConvert.DeserializeObject<List<VehicleConfiguration.Vehicle>>(jsonString);
+                }
+                catch (Exception e)
+                {
+                    Debug.Log("fields in Vehicle struct do not correspond to json table columns" + e);
+                    Debug.Log("Vehicle Struct fields: " + vehicles[0].StructFieldsString());
+                    Debug.Log("Fetched jsonString: " + jsonString);
+                }
             }
         }
 

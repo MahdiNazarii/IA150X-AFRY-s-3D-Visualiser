@@ -1373,6 +1373,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7750820627054402188, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8569376445474651284, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
       propertyPath: floatingText
       value: 
@@ -2037,6 +2041,10 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7750820627054402188, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8569376445474651284, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
       propertyPath: floatingText
       value: 
@@ -2218,6 +2226,10 @@ PrefabInstance:
       value: HM4
       objectReference: {fileID: 0}
     - target: {fileID: 6085960635135248768, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750820627054402188, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2407,25 +2419,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154482233287308073}
   m_CullTransparentMesh: 1
---- !u!114 &34928592116858668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4899538119290650409}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8daaf001f4cc57848974264f0b20c26c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vehicleButton:
-  - {fileID: 8562597156041581071}
-  - {fileID: 610220642167623749}
-  - {fileID: 1640420409871779654}
-  - {fileID: 8291935526636349138}
-  worldSpaceCanvas: {fileID: 715401073909651365}
-  cameraManager: {fileID: 9107195502221923890}
 --- !u!114 &50776424878296432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4366,7 +4359,6 @@ GameObject:
   - component: {fileID: 8617322415946520321}
   - component: {fileID: 2009064725319322551}
   - component: {fileID: 1416416835109998921}
-  - component: {fileID: 34928592116858668}
   - component: {fileID: 6567952815480094660}
   - component: {fileID: 9099608367710819472}
   m_Layer: 5
@@ -5580,6 +5572,10 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7750820627054402188, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8569376445474651284, guid: a83faf92762284c1888f61013e7b9a9d, type: 3}
       propertyPath: floatingText
       value: 
@@ -5751,12 +5747,18 @@ MonoBehaviour:
     machine_external_id: 
     serial_number: 0
     status: 0
-  buttonUI: {fileID: 4899538119290650409}
+  cameraManager: {fileID: 9107195502221923890}
+  worldSpaceCanvas: {fileID: 554233474944447161}
   vehicle:
   - {fileID: 934121265637587191}
   - {fileID: 1632245768}
   - {fileID: 1017543022}
   - {fileID: 1809381287}
+  vehicleButtons:
+  - {fileID: 1735631894216306883}
+  - {fileID: 7401015956098122377}
+  - {fileID: 8647387475218290058}
+  - {fileID: 2148392746256233502}
   vehicleTags:
   - {fileID: 1154482233287308073}
   - {fileID: 5712918183730522622}
