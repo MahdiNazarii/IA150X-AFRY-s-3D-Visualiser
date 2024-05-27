@@ -32,13 +32,13 @@ namespace MCSData.FleetLive.Communication
         // public int level;
 
 
-        // public void Awake()
-        // {
-        //     connection = new DRFConnection();
+        public void Awake()
+        {
+            connection = new DRFConnection();
 
-        //     connection.RegisterCallback(this, "OPTU-MACHINE-POSITION", GetMethodInfo(nameof(MachinePositionUpdate)));
+            connection.RegisterCallback(this, "OPTU-MACHINE-POSITION", GetMethodInfo(nameof(MachinePositionUpdate)));
 
-        // }
+        }
         public FleetLiveServerConnection()
         {
             connection = new DRFConnection();

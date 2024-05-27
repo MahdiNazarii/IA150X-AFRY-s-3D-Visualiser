@@ -19,7 +19,7 @@ public class VehicleManager : MonoBehaviour
 
     void Start() {
         fleetLiveServerConnection = new FleetLiveServerConnection();
-        //fleetLiveServerConnection.Connect("10.40.109.105");
+        fleetLiveServerConnection.Connect("10.40.109.105");
 
     }
 

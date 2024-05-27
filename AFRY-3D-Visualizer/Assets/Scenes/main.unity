@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00060913386, g: 0.00060913386, b: 0.00060913386, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1358,6 +1358,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1809381287}
     - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
+      propertyPath: vehicleButtons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268547774509979163, guid: ddabe4c6bc22ba0489c945c80281a769, type: 3}
       propertyPath: vehicleTags.Array.data[0]
       value: 
       objectReference: {fileID: 6930235244790694744}
@@ -1786,7 +1790,8 @@ PrefabInstance:
       propertyPath: m_Spacing
       value: -0.69
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 34928593460723259, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2683142675953166290, guid: c73bbbd4db78ba2478895dfd5a18b8c8, type: 3}

@@ -11,8 +11,8 @@ public class VehicleConfiguration : MonoBehaviour
 {
     
     public static VehicleConfiguration instance;
-    //private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
-    private string url = "https://localhost:7214/api/Machine/GetAllMachines";
+    private string url = "https://localhost:7030/api/MacMachines/GetAllMacMachines"; // Replace with your API endpoint
+    //private string url = "https://localhost:7214/api/Machine/GetAllMachines";
 
    
     String jsonString;
@@ -133,6 +133,7 @@ public class VehicleConfiguration : MonoBehaviour
 
             //buttons
             int j = i;
+            Debug.Log(i);
             vehicleButtons[i].GetComponent<VehicleButton>().SetVehicleText(machine_external_id);
             vehicleButtons[i].gameObject.SetActive(true);
             vehicleButtons[i].GetComponent<Button>().onClick.RemoveAllListeners();
