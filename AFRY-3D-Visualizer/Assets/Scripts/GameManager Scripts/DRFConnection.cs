@@ -1,3 +1,4 @@
+/* Disclaimer: This code is received from the host company (AFRY in Nynäshamn) and has been modified to fit the project's requirements. */
 using System;
 using System.Collections.Generic;
 using System.Reflection;

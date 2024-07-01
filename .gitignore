@@ -70,3 +70,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# The code files with confidentiality issues which would not be shared with others
+/AFRY-3D-Visualizer/Assets/Scripts/GameManager Scripts/DRFConnection.cs
+/AFRY-3D-Visualizer/Assets/Scripts/GameManager Scripts/DRFConnection.cs.meta
+/AFRY-3D-Visualizer/Assets/Scripts/GameManager Scripts/FleetLiveServerConnection.cs
+/AFRY-3D-Visualizer/Assets/Scripts/GameManager Scripts/FleetLiveServerConnection.cs.meta
